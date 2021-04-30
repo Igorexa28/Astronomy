@@ -36,7 +36,7 @@
       align-items: center;
       width: 100%;
       height: 800px;
-      margin-top: -100px;
+      margin-top: -20px;
     }
 
     .position {
@@ -87,18 +87,18 @@
       <hr />
       <form onsubmit="return false;">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Электронная почта</label>
+          <label for="InputEmail1" class="form-label">Электронная почта</label>
           <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
             placeholder="Введите вашу электорнную почту" required>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Пароль</label>
+          <label for="InputPassword1" class="form-label">Пароль</label>
           <input type="password" class="form-control" id="InputPassword1" aria-descibedby="passwordHelp"
             placeholder="Введите ваш пароль" required>
         </div>
         <div class="mb-3 form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+          <input type="checkbox" class="form-check-input" id="Check">
+          <label class="form-check-label" for="Check">Запомнить меня</label>
         </div>
         <button type="submit" class="btn btn-dark form-control shad" style="margin-bottom: 20px;" id="submit">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -127,59 +127,54 @@
   </footer>
 
   <script>
-    const submitBtn = document.getElementById('submit');
-    const resetBtn = document.getElementById('reset');
+    const submitBtn = document.querySelector('#submit'),
+      resetBtn = document.querySelector('#reset');
 
-    submitBtn.addEventListener('click', function () {
-      const emailField = document.getElementById('InputEmail1').value;
-      const passwordField = document.getElementById('InputPassword1').value;
-      const mainBlock = document.querySelector('.main-content');
-      const infoBlock = document.createElement('div');
+    submitBtn.addEventListener('click', function (event) {
+      const emailField = document.querySelector('#InputEmail1').value,
+        passwordField = document.querySelector('#InputPassword1').value,
+        mainBlock = document.querySelector('.main-content');
 
-      const isAllowed = checkEmpty(emailField) && checkEmpty(passwordField);
-      const isRight = checkEmail(emailField) && checkPassword(passwordField);
+      const messageBlock = document.createElement('div');
 
-      const result = isAllowed && isRight;
+      const isAllowed = isEmpty(emailField) && isEmpty(passwordField);
+      const isValid = isEmail(emailField) && isPassword(passwordField);
+
+      const result = isAllowed && isValid;
 
       if (result) {
-        infoBlock.className = 'alert alert-dark position';
-        infoBlock.innerHTML = 'Вы успешно зашли в систему!';
+        messageBlock.className = 'alert alert-dark position';
+        messageBlock.innerHTML = 'Вы успешно зашли в систему!';
 
-        mainBlock.append(infoBlock);
+        mainBlock.append(messageBlock);
 
         setTimeout(() => location.href = "Astronomy.html", 1 * 1400);
       } else {
-        infoBlock.className = 'alert alert-danger position';
-        infoBlock.innerHTML = 'Данного пользователя не существует! Проверьте правильность введеных данных.';
+        messageBlock.className = 'alert alert-danger position';
+        messageBlock.innerHTML = 'Данного пользователя не существует! Проверьте правильность введеных данных.';
 
-        mainBlock.append(infoBlock);
+        mainBlock.append(messageBlock);
+
+        setTimeout(() => messageBlock.remove(), 2500 * 1);
       }
     });
 
-    resetBtn.addEventListener('click', function () {
+    resetBtn.addEventListener('click', function (event) {
       setTimeout(() => location.href = "Registration.html", 1 * 1400);
     });
 
-    function checkEmpty(string) {
-      const result = !!(string.length) ? true : false;
-
-      return result;
+    function isEmpty(string) {
+      return !!(string.length) ? true : false;
     }
 
-    function checkEmail(emailField) {
-      const regExp = /[a-zA-Z0-9]{4,26}@gmail.com/;
-
-      const result = regExp.test(emailField);
-
-      return result;
+    function isEmail(emailField) {
+      const regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gi;
+      return regExp.test(emailField);
     }
 
-    function checkPassword(password) {
-      const regExp = /[A-Z0-9a-z]{8,24}/;
-
-      const result = regExp.test(password);
-
-      return result;
+    function isPassword(password) {
+      const regExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}$/gi;
+      return regExp.test(password);
     }
   </script>
 </body>
