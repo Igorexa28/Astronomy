@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Вход в систему</title>
+</head>
+
+<body style="background-color: rgb(248, 248, 248);">
+  <style>
+    h1 {
+      color: #333;
+      padding-bottom: 10px;
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+    }
+
+    .main-content {
+      height: auto;
+      width: 770px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 30px;
+      padding-bottom: 40px;
+      border-radius: 10px;
+    }
+
+    #Main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 800px;
+      margin-top: -100px;
+    }
+
+    .position {
+      margin-top: 20px;
+      margin-bottom: -10px;
+    }
+
+    .shad:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer-text {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 19px;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 20px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding-top: 30px;
+      color: white;
+      height: 80px;
+      width: 100%;
+      background-color: #212529;
+    }
+  </style>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+    <div class="container-fluid">
+      <a class="navbar-brand"
+        href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0">Солнечная
+        Система</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+      </div>
+    </div>
+  </nav>
+
+  <div id="Main">
+    <div class="main-content border border-dark">
+      <h1>Форма авторизации</h1>
+      <hr />
+      <form onsubmit="return false;">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Электронная почта</label>
+          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+            placeholder="Введите вашу электорнную почту" required>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="InputPassword1" aria-descibedby="passwordHelp"
+            placeholder="Введите ваш пароль" required>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Запомнить меня</label>
+        </div>
+        <button type="submit" class="btn btn-dark form-control shad" style="margin-bottom: 20px;" id="submit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+            <path fill-rule="evenodd"
+              d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+          </svg>
+          Войти в систему</button>
+        <button type="reset" class="btn btn-danger form-control shad" id="reset">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-box-arrow-in-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M10 3.5a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-2a.5.5 0 0 1 1 0v2A1.5 1.5 0 0 1 9.5 14h-8A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2h8A1.5 1.5 0 0 1 11 3.5v2a.5.5 0 0 1-1 0v-2z" />
+            <path fill-rule="evenodd"
+              d="M4.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H14.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+          </svg>
+          Вернуться к регистрации</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-text">All rights reserved &#169</p>
+  </footer>
+
+  <script>
+    const submitBtn = document.getElementById('submit');
+    const resetBtn = document.getElementById('reset');
+
+    submitBtn.addEventListener('click', function () {
+      const emailField = document.getElementById('InputEmail1').value;
+      const passwordField = document.getElementById('InputPassword1').value;
+      const mainBlock = document.querySelector('.main-content');
+      const infoBlock = document.createElement('div');
+
+      const isAllowed = checkEmpty(emailField) && checkEmpty(passwordField);
+      const isRight = checkEmail(emailField) && checkPassword(passwordField);
+
+      const result = isAllowed && isRight;
+
+      if (result) {
+        infoBlock.className = 'alert alert-dark position';
+        infoBlock.innerHTML = 'Вы успешно зашли в систему!';
+
+        mainBlock.append(infoBlock);
+
+        setTimeout(() => location.href = "Astronomy.html", 1 * 1400);
+      } else {
+        infoBlock.className = 'alert alert-danger position';
+        infoBlock.innerHTML = 'Данного пользователя не существует! Проверьте правильность введеных данных.';
+
+        mainBlock.append(infoBlock);
+      }
+    });
+
+    resetBtn.addEventListener('click', function () {
+      setTimeout(() => location.href = "Registration.html", 1 * 1400);
+    });
+
+    function checkEmpty(string) {
+      const result = !!(string.length) ? true : false;
+
+      return result;
+    }
+
+    function checkEmail(emailField) {
+      const regExp = /[a-zA-Z0-9]{4,26}@gmail.com/;
+
+      const result = regExp.test(emailField);
+
+      return result;
+    }
+
+    function checkPassword(password) {
+      const regExp = /[A-Z0-9a-z]{8,24}/;
+
+      const result = regExp.test(password);
+
+      return result;
+    }
+  </script>
+</body>
+
+</html>
