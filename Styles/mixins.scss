@@ -1,0 +1,11 @@
+@mixin sizeOfBlock ($height: 100px, $width: 200px) {
+    height: $height;
+    width: $width;
+}
+
+@mixin flexContainer ($flexDir: row, $flexWrap: wrap, $JusCon: center, $aliItems: center) {
+    display: flex;
+    align-items: $aliItems;
+    justify-content: $JusCon;
+    flex-flow: $flexDir $flexWrap;
+}

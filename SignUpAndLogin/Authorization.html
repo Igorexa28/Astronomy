@@ -5,67 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../Styles/Authorization.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
   <title>Вход в систему</title>
 </head>
 
-<body style="background-color: rgb(248, 248, 248);">
-  <style>
-    h1 {
-      color: #333;
-      padding-bottom: 10px;
-      font-family: 'Times New Roman', Times, serif;
-      text-align: center;
-    }
-
-    .main-content {
-      height: auto;
-      width: 770px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 30px;
-      padding-bottom: 40px;
-      border-radius: 10px;
-    }
-
-    #Main {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 800px;
-      margin-top: -20px;
-    }
-
-    .position {
-      margin-top: 20px;
-      margin-bottom: -10px;
-    }
-
-    .shad:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .footer-text {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 19px;
-      text-align: center;
-    }
-
-    footer {
-      margin-top: 20px;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      padding-top: 30px;
-      color: white;
-      height: 80px;
-      width: 100%;
-      background-color: #212529;
-    }
-  </style>
+<body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
     <div class="container-fluid">
@@ -87,13 +33,13 @@
       <hr />
       <form onsubmit="return false;">
         <div class="mb-3">
-          <label for="InputEmail1" class="form-label">Электронная почта</label>
-          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+          <label for="email" class="form-label">Электронная почта</label>
+          <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
             placeholder="Введите вашу электорнную почту" required>
         </div>
         <div class="mb-3">
-          <label for="InputPassword1" class="form-label">Пароль</label>
-          <input type="password" class="form-control" id="InputPassword1" aria-descibedby="passwordHelp"
+          <label for="password" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="password" aria-descibedby="passwordHelp"
             placeholder="Введите ваш пароль" required>
         </div>
         <div class="mb-3 form-check">
@@ -131,11 +77,11 @@
       resetBtn = document.querySelector('#reset');
 
     submitBtn.addEventListener('click', function (event) {
-      const emailField = document.querySelector('#InputEmail1').value,
-        passwordField = document.querySelector('#InputPassword1').value,
+      const emailField = document.querySelector('#email').value,
+        passwordField = document.querySelector('#password').value,
         mainBlock = document.querySelector('.main-content');
 
-      const messageBlock = document.createElement('div');
+      const messageBox = document.createElement('div');
 
       const isAllowed = isEmpty(emailField) && isEmpty(passwordField);
       const isValid = isEmail(emailField) && isPassword(passwordField);
@@ -143,24 +89,24 @@
       const result = isAllowed && isValid;
 
       if (result) {
-        messageBlock.className = 'alert alert-dark position';
-        messageBlock.innerHTML = 'Вы успешно зашли в систему!';
+        messageBox.className = 'alert alert-dark position';
+        messageBox.innerHTML = 'Вы успешно зашли в систему!';
 
-        mainBlock.append(messageBlock);
+        mainBlock.append(messageBox);
 
-        setTimeout(() => location.href = "Astronomy.html", 1 * 1400);
+        setTimeout(() => location.href = "Astronomy.html", 1 * 1600);
       } else {
-        messageBlock.className = 'alert alert-danger position';
-        messageBlock.innerHTML = 'Данного пользователя не существует! Проверьте правильность введеных данных.';
+        messageBox.className = 'alert alert-danger position';
+        messageBox.innerHTML = 'Данного пользователя не существует! Проверьте правильность введеных данных.';
 
-        mainBlock.append(messageBlock);
+        mainBlock.append(messageBox);
 
-        setTimeout(() => messageBlock.remove(), 2500 * 1);
+        setTimeout(() => messageBox.remove(), 2500 * 1);
       }
     });
 
     resetBtn.addEventListener('click', function (event) {
-      setTimeout(() => location.href = "Registration.html", 1 * 1400);
+      setTimeout(() => location.href = "Registration.html", 1 * 1600);
     });
 
     function isEmpty(string) {

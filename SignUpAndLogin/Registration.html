@@ -98,21 +98,21 @@
       <hr />
       <form onsubmit="return false;">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Электронная почта</label>
-          <input type="email" class="form-control" id="InputEmail1" aria-describedby="emailHelp"
+          <label for="Email" class="form-label">Электронная почта</label>
+          <input type="email" class="form-control" id="Email" aria-describedby="emailHelp"
             placeholder="Введите вашу электронную почту" required>
           <div id="emailHelp" class="form-text">Мы никому не предоставляем доступ к вашей электронной почте.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Пароль</label>
-          <input type="password" class="form-control" id="InputPassword1" aria-descibedby="passwordHelp"
+          <label for="Password1" class="form-label">Пароль</label>
+          <input type="password" class="form-control" id="Password1" aria-descibedby="passwordHelp"
             placeholder="Введите ваш пароль" required>
           <div id="passwordHelp" class="form-text">Ваш пароль должен состоять из букв латинского алфавита, цифр и
             специальных символов.</div>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Подтверждение пароля</label>
-          <input type="password" class="form-control" id="InputPassword2"
+          <label for="Password2" class="form-label">Подтверждение пароля</label>
+          <input type="password" class="form-control" id="Password2"
             placeholder="Подтвердите созданный вами пароль" required>
         </div>
         <div class="mb-3 form-check">
@@ -146,24 +146,21 @@
     <p class="footer-text">All rights reserved <span>&#169</span></p>
   </footer>
   <script>
-    const submit_button = document.getElementById('submit');
-    const reset_button = document.getElementById('reset');
-    const myForm = document.forms[0];
+    const submit_button = document.querySelector('#submit'), 
+      reset_button = document.querySelector('#reset'), 
+      myForm = document.forms[0];
 
 
     submit_button.addEventListener('click', function () {
-      const first_input = document.getElementById('InputEmail1').value;
-      const second_input = document.getElementById('InputPassword1').value;
-      const third_input = document.getElementById('InputPassword2').value;
+      const first_input = document.querySelector('#Email').value, 
+        second_input = document.querySelector('#Password1').value, 
+        third_input = document.querySelector('#Password2').value;
 
-      const check_email = checkEmail(first_input);
-      const check_password = checkPassword(second_input);
-      const equalPasswords = checkPasswords(second_input, third_input);
+      const check_email = checkEmail(first_input), 
+        check_password = checkPassword(second_input), 
+        equalPasswords = checkPasswords(second_input, third_input);
 
       const alertMessage = document.createElement('div');
-
-      console.log(check_email + " " + first_input);
-      console.log(check_password + ' ' + second_input);
 
       if (check_email && check_password && equalPasswords) {
         localStorage.setItem('email', first_input);
@@ -174,7 +171,7 @@
 
         myForm.insertAdjacentElement('afterEnd', alertMessage);
 
-        setTimeout(() => location.href = 'Authorization.html', 1 * 1500);
+        setTimeout(() => location.href = 'Authorization.html', 1 * 1400);
       } else {
         alertMessage.className = 'alert alert-danger position';
         alertMessage.innerHTML = `Пожалуйста, проверьте <strong>правильность вводимых данных</strong>.`;
@@ -186,35 +183,26 @@
 
 
     reset_button.addEventListener('click', function () {
-      const first_input = document.getElementById('InputEmail1').value;
-      const second_input = document.getElementById('InputPassword1').value;
-      const third_input = document.getElementById('InputPassword2').value;
+      const first_input = document.querySelector('#Email').value, 
+        second_input = document.querySelector('#Password1').value, 
+        third_input = document.querySelector('#Password2').value;
 
-      first_input = null, second_input = null, third_input = null;
+        first_input = null, second_input = null, third_input = null;
     });
 
     function checkPasswords(password, passwordConfirm) {
-      if (password == passwordConfirm) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-
-    function checkPassword(password) {
-      const regExp = /[0-9A-Za-z]{8,24}/gi;
-
-      const result = regExp.test(password);
-
+      const result = password === passwordConfirm ? true : false;
       return result;
     }
 
-    function checkEmail(email) {
-      const regExp = /[a-zA-Z0-9]{3,}[@]gmail.com/;
+    function isPassword(password) {
+      const regExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=[^0-9]*[0-9]).{8,}$/gi;
+      return regExp.test(password);
+    }
 
-      const result = regExp.test(email);
-
-      return result;
+    function isEmail(emailField) {
+      const regExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gi;
+      return regExp.test(emailField);
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
