@@ -32,6 +32,19 @@ body {
   padding: 30px 30px 40px 30px;
   height: auto;
   width: 770px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 #Main .main-content h1 {
   color: #333;
@@ -41,8 +54,8 @@ body {
 }
 
 .position {
-  margin-top: 20px;
-  margin-bottom: -10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 .shad:hover {
@@ -54,8 +67,8 @@ footer {
   left: 0;
   bottom: 0;
   position: fixed;
-  margin-top: 20px;
   color: #FFFFFF;
+  margin-top: 20px;
   padding-top: 30px;
   background-color: #212529;
   height: 80px;
@@ -65,4 +78,4 @@ footer .footer-text {
   font-size: 19px;
   text-align: center;
   font-family: "Times New Roman", Times, serif;
-}/*# sourceMappingURL=Authorization.css.map */
+}/*# sourceMappingURL=Registration.css.map */
