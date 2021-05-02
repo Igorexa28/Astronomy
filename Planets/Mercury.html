@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <title>Меркурий</title>
+</head>
+
+<body style="background-color: rgb(248, 248, 248);">
+  <style>
+    button {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .main-content {
+      height: auto;
+      width: 770px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+      border-radius: 10px;
+      padding: 5px;
+    }
+
+    ul>li {
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .text {
+      color: #333;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 19px;
+      font-weight: normal;
+      text-align: left;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+    }
+
+    #Main {
+      display: flex;
+      height: auto;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: row;
+      justify-content: center;
+      flex-shrink: 1;
+      flex-grow: 1;
+    }
+
+    .name_planet {
+      text-align: center;
+    }
+
+    .photo {
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: all 1s ease-out;
+    }
+
+    .photo:hover {
+      transform: scale(1.04);
+    }
+
+    .shad:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .second_header {
+      text-align: center;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .horizontal_line {
+      border: 1px solid #333;
+      width: 70%;
+      height: 3px;
+      text-align: center;
+    }
+
+    #arrowTop {
+      height: 9px;
+      width: 14px;
+      color: black;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+    }
+
+    #arrowTop::before {
+      content: '▲';
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;"
+        href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0">Солнечная
+        система</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Astronomy.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Astronomy.html">Астрономия</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              Меркурий
+              <img src="../Images/giphy.gif" height="20px" width="20px"
+                style="border-radius: 10px; float: right; margin-left: 5px; margin-top: 3px;" />
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Введите поисковый запрос" style="font-family: 'Times New Roman', Times, serif;" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Найти</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="arrowTop" hidden></div>
+  <div id="Main">
+    <div class="main-content">
+      <h1 class="name_planet" style="color: #333; font-family: 'Times New Roman', Times, serif;">Меркурий - маленький и
+        быстрый</h1>
+      <hr style="border: 2px solid rgb(51, 51, 51);" />
+      <center>
+        <figure class="main-photo" style="margin-top: 17px;">
+          <p>
+            <img src="new_mercury.jpg" alt="" title="" class="photo" id="mainPhoto" />
+            <img src="../Images/new_mercury.jpg" alt="" title="" class="photo" id="mainPhoto" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;" 1><i>Меркурий. Снимок с космического
+              аппарата «Мессенджер».</i></figcaption>
+        </figure>
+      </center>
+      <p class="text">
+        <strong>Меркурий</strong> – первая по счёту от Солнца планета Солнечной системы, одна из четырёх, входящих в
+        Земную группу. После лишения статуса планеты Плутона в 2006 г. Меркурий оказался самой маленькой из планет.
+      </p>
+      <p class="text">
+        Он назван в честь одноименного римского бога, который соответствовал греческому Гермесу. У германцев Меркурий
+        именовался в честь бога Одина, а у древних египтян – в честь Гора или Сета.
+      </p>
+      <p class="text">
+        Радиус Меркурия – около 2440 км. (менее 0,4 от радиуса Земли). Его объём и масса составляют лишь чуть более 5%
+        земных. Плотность планеты примерно такая же, как у Земли.
+      </p>
+      <center>
+        <figure class="main-photo" style="margin-top: 17px;">
+          <p>
+            <img src="../Images/terrestrial-planet-sizes.jpg" alt="" title="" class="photo" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Сравнительные размеры планет.
+              Слева направо: Меркурий, Венера, Земля, Марс.</i></figcaption>
+        </figure>
+      </center>
+      <p class="text">
+        Меркурий обладает крупным железным ядром, составляющим 83% от объёма планеты. По диаметру оно примерно равно
+        Луне. Современные данные указывают на то, что железо ядра находится не в твёрдом, а в жидком состоянии. Ядро
+        создаёт вокруг Меркурия магнитное поле, чья напряжённость примерно в 100 раз меньше земного.
+      </p>
+      <p class="text">
+        Меркурий почти не имеет атмосферы – отсюда необычайно резкая разница на нём дневных и ночных температур. У него
+        почти не имеется и наклона оси – значит, не существует и смены времён года.
+      </p>
+      <center>
+        <figure class="main-photo" style="margin-top: 17px;">
+          <p>
+            <img src="../Images/surface_mercury.jpg" alt="" title="" class="photo" />
+            <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Изображение поверхности
+                Меркурия.</i></figcaption>
+          </p>
+        </figure>
+      </center>
+      <p class="text">
+        Спутников у Меркурия нет.
+      </p>
+      <p class="text">
+        Из всех планет Меркурий движется вокруг Солнца по самой эллипсовидно вытянутой («с наибольшим эксцентриситетом»)
+        орбите. В перигелии (точке наибольшего приближения к Солнцу) его расстояние до светила составляет ок. 46 млн.
+        км. (примерно 0,31 астрономических единицы). В афелии (точке наибольшего удаления) оно увеличивается в полтора
+        раза – до 69,8 млн. км. (0,47 а. е.). Орбита Меркурия к тому же постоянно меняет свой «угол» расположения к
+        Солнцу (см. рисунок ниже). Это так называемое «смещение меркурианского перигелия» противоречит законам Ньютона.
+        Объяснить его оказалось возможным лишь после создания Эйнштейном общей теории относительности – и это смещение
+        стало одним из важнейших её подтверждений.
+      </p>
+      <center>
+        <figure class="main-photo" style="margin-top: 17px;">
+          <p>
+            <img src="../Images/precessing-mercury.gif" alt="" title="" class="photo" />
+            <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Прецессия орбиты Меркурия.</i>
+            </figcaption>
+          </p>
+        </figure>
+      </center>
+      <p class="text">
+        Полный оборот вокруг Солнца Меркурий совершает примерно за 88 дневных дней – такова длительность меркурианского
+        года. Вращение этой планеты вокруг своей оси самое медленное во всей Солнечной системе. На один такой оборот
+        Меркурию требуется более чем 58 земных дней (две трети его года). Это – продолжительность его звёздных суток.
+        Однако вместе с вращением вокруг оси Меркурий совершает обороты вокруг Солнца, во время которых также меняются
+        «дневные» зоны – те, что в данный момент обращены к светилу. Сумма этих двух движений приводит к тому, что
+        солнечные сутки на планете (то есть продолжительность дня от восхода до заката для наблюдателя, который
+        находился бы прямо на ней) составляют 176 дневных – два меркурианских года. Это уникальный для Солнечной системы
+        случай!
+      </p>
+      <p class="text">
+        Существует гипотеза, что Меркурий в прошлом был спутником планеты Венеры. В ранний период своей жизни он испытал
+        столкновение с большим небесным телом, которое оставило след – ударный кратер Равнину Жары диаметром около 1500
+        км.
+      </p>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Меркурий – история изучения и исследований</h2>
+      <center>
+        <hr class="horizontal_line" style="width: 70%" />
+      </center>
+      <p class="text">
+        В связи с близостью Меркурия к Солнцу и его слабым притяжением посылка космических аппаратов к нему – весьма
+        непростая задача. Поэтому он исследован хуже многих других планет. Первой приблизившейся к Меркурию станцией был
+        американский «Маринер-10». В 1974-1975 годах он трижды пролетел мимо планеты, сделав снимки почти половины её
+        поверхности.
+      </p>
+      <p class="text">
+        Вторым посланным к Меркурию аппаратом стал зонд НАСА «Мессенджер». В январе 2008 г. он впервые совершил облёт
+        Меркурия, а в марте 2011 вышел на его орбиту как первый искусственный спутник. При помощи «Мессенджера» была
+        составлена полная карта планеты, исследована её атмосфера, сделаны замеры магнитного поля. В 2015 г.
+        «Мессенджер» упал на Меркурий.
+      </p>
+      <p class="text">
+        В октябре 2018 г. собственную миссию к Меркурию – «BepiColombo» – запустило Европейское Космическое Агентство.
+        Она доберётся до планеты лишь в 2025 г.
+      </p>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">День и
+        ночь на Меркурии</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        Одно из полушарий Меркурия, в течение длительного срока обращено к Солнцу, из-за его медленного вращения.
+        Поэтому смена дня и ночи там происходит значительно реже, чем на других планетах солнечной системы, да и вообще,
+        практически не заметна. День и ночь на Меркурии равны году планеты, потому что продолжаются целых 88 суток! Так
+        же, на Меркурии характерны значительные перепады температур: днем температура поднимается до +430 °С, а ночью,
+        опускается до – 180 °С. Ось Меркурия практически перпендикулярна к плоскости орбиты, и составляет всего 7° ,
+        поэтому смены времен года здесь нет. Зато, рядом с полюсами, наблюдаются места, куда ни когда не проникает
+        солнечный свет.
+      </p>
+      <center>
+        <figure class="main-photo" style="margin-top: 17px;">
+          <p>
+            <img src="../Images/mercury.png.jpg" alt="" title="" class="photo" />
+            <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Меркурий с расстояния 400 000
+                тысяч километров.</i></figcaption>
+          </p>
+        </figure>
+      </center>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;"
+        id="insertBefore">Дополнительная информация</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        <img src="../Images/giphy.gif" height="auto" width="28%" alt="" title="" style="float: right; border-radius: 10px;" />
+        Масса: 3,3*1023 кг (0,055 массы Земли)<br />
+        Диаметр на экваторе: 4880 км<br />
+        Наклон оси: 0,01°<br />
+        Плотность: 5,43 г/см3<br />
+        Средняя температура поверхности: –73 °С<br />
+        Период обращения вокруг оси (сутки): 59 дней<br />
+        Расстояние от Солнца (среднее): 0, 390 а. е. или 58 млн. км
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const insertBeforeElement = document.querySelector('#insertBefore');
+
+    arrowTop.onclick = function () {
+      window.scrollTo(pageXOffset, 0);
+    }
+
+    window.addEventListener('scroll', function () {
+      arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+    });
+
+    const main_block = document.querySelector('.main-content');
+
+    const second_h2 = document.createElement('h2');
+    second_h2.className = 'second_header';
+    second_h2.textContent = 'Интересные факты о Меркурии';
+    second_h2.style.fontFamily = `'Times New Roman', Times, serif`;
+
+    insertBeforeElement.insertAdjacentElement('afterBegin', second_h2);
+
+    second_h2.insertAdjacentHTML('beforeend', '<center><hr class="horizontal_line"/></center>');
+
+    const inter_data = ['Объект, весящий на Земле 100 килограмм, на Меркурии будет весить 37,7 килограмма.',
+      'В ближайшей точке орбиты Солнце с поверхности Меркурия выглядит в 3 раза больше, чем с Земли.',
+      'Среди всех планет Солнечной системы только Меркурий и Венера не имеют естественных спутников.',
+      'Меркурий является самой быстрой планетой в Солнечной системе.',
+      'Диаметр самого большого кратера на Меркурии «Равнина Жары» (Caloris Planitia) составляет около 1 550 километров.'
+    ];
+
+    const inter_list = document.createElement('ul');
+
+    for (let i = 0; i < inter_data.length; i++) {
+      let li = document.createElement('li');
+      li.className = 'text';
+      li.textContent = inter_data[i];
+
+      inter_list.append(li);
+    }
+
+    second_h2.insertAdjacentElement('beforeend', inter_list);
+
+    const nextStepButton = document.createElement('button');
+    const previousStepButton = document.createElement('button');
+
+    nextStepButton.className = 'btn btn-outline-dark shad';
+    nextStepButton.textContent = 'Читать дальше: планета Венера';
+    nextStepButton.style.width = '100%';
+    nextStepButton.style.marginTop = '15px';
+    nextStepButton.id = 'nextStep';
+
+    main_block.append(nextStepButton);
+
+    previousStepButton.className = 'btn btn-outline-info shad';
+    previousStepButton.textContent = 'Вернуться обратно к списку планет';
+    previousStepButton.style.width = '100%';
+    previousStepButton.style.marginTop = '15px';
+    previousStepButton.id = 'previousStep';
+
+    main_block.append(previousStepButton);
+
+    nextStepButton.addEventListener('click', function () {
+      setTimeout(() => location.href = "Venus.html", 1 * 1400);
+    });
+
+    previousStepButton.addEventListener('click', function () {
+      setTimeout(() => location.href = "Solar_System.html", 1 * 1400);
+    });
+
+    const footer = document.createElement('footer');
+    footer.style.height = '80px';
+    footer.style.width = '100%';
+    footer.style.marginTop = '30px';
+    footer.style.backgroundColor = '#212529';
+
+
+    document.body.append(footer);
+
+    const place_footer = document.querySelector('footer');
+
+    const footer_text = document.createElement('p');
+    footer_text.style.textAlign = 'center';
+    footer_text.style.color = 'white';
+    footer_text.style.paddingTop = '30px';
+    footer_text.className = 'text';
+    footer_text.textContent = 'All rights reserved 2020 - 2021 developed by Igor ©';
+
+    place_footer.insertAdjacentElement('afterBegin', footer_text);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
