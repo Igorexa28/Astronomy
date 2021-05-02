@@ -134,7 +134,7 @@
     </div>
   </nav>
 
-  <div id="arrowTop" hidden></div>
+<div id="arrowTop" hidden></div>
   <div id="Main">
     <div class="main-content">
       <h1 class="name_planet" style="color: #333; font-family: 'Times New Roman', Times, serif;">Меркурий - маленький и
@@ -284,11 +284,12 @@
         Период обращения вокруг оси (сутки): 59 дней<br />
         Расстояние от Солнца (среднее): 0, 390 а. е. или 58 млн. км
       </p>
-    </div>
   </div>
+</div>
 
   <script>
-    const insertBeforeElement = document.querySelector('#insertBefore');
+    const insertBeforeElement = document.querySelector('#insertBefore'),
+      mainBlock = document.querySelector('.main-content');
 
     arrowTop.onclick = function () {
       window.scrollTo(pageXOffset, 0);
@@ -298,82 +299,103 @@
       arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
     });
 
-    const main_block = document.querySelector('.main-content');
+    const h2 = createHeader('second_header', 'Интересные факты о Меркурии');
 
-    const second_h2 = document.createElement('h2');
-    second_h2.className = 'second_header';
-    second_h2.textContent = 'Интересные факты о Меркурии';
-    second_h2.style.fontFamily = `'Times New Roman', Times, serif`;
+    insertBeforeElement.insertAdjacentElement('afterBegin', h2);
 
-    insertBeforeElement.insertAdjacentElement('afterBegin', second_h2);
+    h2.insertAdjacentHTML('beforeend', '<center><hr class="horizontal_line"/></center>');
 
-    second_h2.insertAdjacentHTML('beforeend', '<center><hr class="horizontal_line"/></center>');
-
-    const inter_data = ['Объект, весящий на Земле 100 килограмм, на Меркурии будет весить 37,7 килограмма.',
+    const infoData = ['Объект, весящий на Земле 100 килограмм, на Меркурии будет весить 37,7 килограмма.',
       'В ближайшей точке орбиты Солнце с поверхности Меркурия выглядит в 3 раза больше, чем с Земли.',
       'Среди всех планет Солнечной системы только Меркурий и Венера не имеют естественных спутников.',
       'Меркурий является самой быстрой планетой в Солнечной системе.',
       'Диаметр самого большого кратера на Меркурии «Равнина Жары» (Caloris Planitia) составляет около 1 550 километров.'
     ];
 
-    const inter_list = document.createElement('ul');
+    const infoList = createList(infoData);
 
-    for (let i = 0; i < inter_data.length; i++) {
-      let li = document.createElement('li');
-      li.className = 'text';
-      li.textContent = inter_data[i];
+    h2.insertAdjacentElement('beforeend', infoList);
 
-      inter_list.append(li);
-    }
+    const nextStepBtn = createBtn('btn btn-outline-dark shad', 'Читать дальше: планета Венера', 'nextStep');
+    const previousBtn = createBtn('btn btn-outline-info shad', 'Вернуться обратно к списку планет', 'previousStep');
 
-    second_h2.insertAdjacentElement('beforeend', inter_list);
+    mainBlock.append(nextStepBtn);
+    mainBlock.append(previousBtn);
 
-    const nextStepButton = document.createElement('button');
-    const previousStepButton = document.createElement('button');
-
-    nextStepButton.className = 'btn btn-outline-dark shad';
-    nextStepButton.textContent = 'Читать дальше: планета Венера';
-    nextStepButton.style.width = '100%';
-    nextStepButton.style.marginTop = '15px';
-    nextStepButton.id = 'nextStep';
-
-    main_block.append(nextStepButton);
-
-    previousStepButton.className = 'btn btn-outline-info shad';
-    previousStepButton.textContent = 'Вернуться обратно к списку планет';
-    previousStepButton.style.width = '100%';
-    previousStepButton.style.marginTop = '15px';
-    previousStepButton.id = 'previousStep';
-
-    main_block.append(previousStepButton);
-
-    nextStepButton.addEventListener('click', function () {
+    nextStepBtn.addEventListener('click', function () {
       setTimeout(() => location.href = "Venus.html", 1 * 1400);
     });
 
-    previousStepButton.addEventListener('click', function () {
+    previousBtn.addEventListener('click', function () {
       setTimeout(() => location.href = "Solar_System.html", 1 * 1400);
     });
 
-    const footer = document.createElement('footer');
-    footer.style.height = '80px';
-    footer.style.width = '100%';
-    footer.style.marginTop = '30px';
-    footer.style.backgroundColor = '#212529';
+    createFooter();
+    createTextForFooter();
 
+    function createList(data) {
+      const ul = document.createElement('ul');
 
-    document.body.append(footer);
+      for (let index = 0; index < data.length; index++) {
+        let li = document.createElement('li');
+        li.className = 'text';
+        li.textContent = data[index];
 
-    const place_footer = document.querySelector('footer');
+        ul.append(li);
+      }
 
-    const footer_text = document.createElement('p');
-    footer_text.style.textAlign = 'center';
-    footer_text.style.color = 'white';
-    footer_text.style.paddingTop = '30px';
-    footer_text.className = 'text';
-    footer_text.textContent = 'All rights reserved 2020 - 2021 developed by Igor ©';
+      return ul;
+    }
 
-    place_footer.insertAdjacentElement('afterBegin', footer_text);
+    function createHeader(classToUse, textHead) {
+      const h2 = document.createElement('h2');
+      h2.className = classToUse;
+      h2.textContent = textHead;
+      h2.style.cssText = `
+        font-family: 'Times New Roman', Times, serif;
+      `; 
+
+      return h2;
+    }
+
+    function createBtn(classToUse, textBtn, idBtn) {
+      const button = document.createElement('button');
+      button.id = idBtn;
+      button.textContent = textBtn;
+      button.className = classToUse;
+      button.style.cssText = `
+        width: 100%;
+        margin-top: 15px;
+      `;
+
+      return button;
+    }
+
+    function createFooter() {
+      const footer = document.createElement('footer');
+      footer.style.cssText = `
+        width: 100%;
+        height: 80px;
+        margin-top: 30px;
+        background-color: #212529;  
+      `;
+
+      document.body.append(footer);
+    }
+
+    function createTextForFooter() {
+      const paragraph = document.createElement('p');
+      paragraph.style.cssText = `
+        color: #FFFFFF;
+        padding-top: 30px;
+        text-align: center;
+      `;
+
+      paragraph.className = 'text';
+      paragraph.textContent = 'All rights reserved 2020 - 2021 developed by Igor ©';
+
+      document.querySelector('footer').insertAdjacentElement('afterBegin', paragraph);
+    }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
