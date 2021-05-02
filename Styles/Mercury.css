@@ -1,0 +1,115 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+button {
+  font-family: "Times New Roman", Times, serif;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#arrowTop {
+  height: 9px;
+  width: 14px;
+  color: black;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+#arrowTop::before {
+  content: "▲";
+}
+
+ul > li {
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.name_planet {
+  text-align: center;
+}
+
+.shad:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.second_header {
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}
+
+.horizontal_line {
+  border: 1px solid #333;
+  width: 70%;
+  height: 3px;
+  text-align: center;
+}
+
+#Main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+#Main .main-content {
+  height: auto;
+  width: 770px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 5px;
+}
+#Main .text {
+  color: #333;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 19px;
+  font-weight: normal;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+#Main .photo {
+  border-radius: 10px;
+  width: 100%;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+}
+#Main .photo:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}/*# sourceMappingURL=Mercury.css.map */

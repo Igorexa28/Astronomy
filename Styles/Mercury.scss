@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(248, 248, 248);
+}
+
+button {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#arrowTop {
+    height: 9px;
+    width: 14px;
+    color: black;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#arrowTop::before {
+    content: '▲';
+}
+
+ul>li {
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.name_planet {
+    text-align: center;
+}
+
+.shad:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.second_header {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.horizontal_line {
+    border: 1px solid #333;
+    width: 70%;
+    height: 3px;
+    text-align: center;
+}
+
+#Main {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: row;
+    justify-content: center;
+    flex-shrink: 1;
+    flex-grow: 1;
+
+    .main-content {
+        height: auto;
+        width: 770px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        border-radius: 10px;
+        padding: 5px;
+    }
+
+    .text {
+        color: #333;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 19px;
+        font-weight: normal;
+        text-align: left;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+    }
+
+    .photo {
+        border-radius: 10px;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transition: all 1s ease-out;
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}
+
