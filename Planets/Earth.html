@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Styles/MainStyles.css">
+    <title>Земля</title>
+</head>
+
+<body>
+    <style>
+        #surfacePlanet {
+            transition: all 1s ease-out;
+        }
+
+        #surfacePlanet:hover {
+            transform: scale(1.04);
+        }
+
+        #bakteria {
+            transition: 1s all ease-out;
+        }
+
+        #bakteria:hover {
+            transform: scale(1.04);
+        }
+
+        .additional-content {
+            height: auto;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        .footer-text {
+            font-size: 16px;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        footer {
+            width: 100%;
+            height: 80px;
+            margin-top: 40px;
+            color: #FFFFFF;
+            padding-top: 30px;
+            background-color: #212529;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;"
+                href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+                style="text-decoration: none;">Солнечная система</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="Mercury.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Astronomy.html">Астрономия</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Goroskop_new.html">Знаки зодиака</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="navbarDropdown">
+                            Земля
+                            <img src="../Images/4591e68721e35605419093df41dbb486.gif" height="20px" width="20px"
+                                style="border-radius: 10px; float: right; margin-left: 5px; margin-top: 3px;" />
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Введите что-то" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="arrowTop" hidden></div>
+    <div id="Main">
+        <div class="main-content">
+            <h1 class="name_planet" style="color: #333; font-family: 'Times New Roman', Times, serif;">Земля - колыбель
+                жизни </h1>
+            <hr class="horizontal_line" style="width: 100%;" />
+            <div id="carouselExampleIndicators" class="carousel slide border-radius" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../Images/Planets_Earth_453016_1920x1080.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/5f5e52657617685f0735d52ae0968496.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/Beautiful-Earth-blue-planet-space_1920x1080.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <p class="text">
+                Наша планета – Земля – имеет множество имен: голубая планета, Терра (лат.), третья планета, Earth
+                (анг.). Она вращается вокруг Солнца по круговой орбите, радиусом около 1 астрономической единицы (150
+                млн. км). Период обращения по орбите происходит со скоростью 29,8 км/с и длится 1 год (365 суток) Ее
+                возраст, сравним с возрастом всей солнечной системы, и насчитывает 4,5 миллиарда лет. Современная наука
+                полагает, что Земля образовалась из пыли и газа, который остался, от формирования Солнца. Из того, что
+                элементы с высокой плотностью находятся на больших глубинах, а легкие вещества (силикаты различных
+                металлов) остались на поверхности, следует закономерный вывод –Земля, в начале своего формирования,
+                находилась в расплавленном состоянии. Сейчас, температура ядра планеты, находится в пределах 6200 °С.
+                После спада высоких температур, она начала твердеть. Огромные площади Земли, до сих пор покрыты водой,
+                без которой возникновение жизни, было бы невозможно.
+            </p>
+            <figure>
+                <center>
+                    <p>
+                        <img src="../Images/Photo-Earth-696x420.jpg" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>МКС на орбите планеты
+                            Земля.</i></figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                У Земли есть атмосфера, материки, вода и магнитное поле. Планета Земля имеет благоприятный температурный
+                режим и умеренную смену сезонов. Магнитное поле надёжно защищает её от солнечного ветра. Да и само
+                расположение относительно Солнца самое удобное и рациональное. Эти и многие другие факторы способствуют
+                поддержанию жизни на планете. Венера тоже имеет атмосферу, но её параметры с жизнью несовместимы. На
+                Марсе есть вода, но жизни тоже нет. Все условия оптимальны только на нашей планете.
+            </p>
+            <h2>
+                Поверхность планеты
+            </h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <figure>
+                <center>
+                    <p>
+                        <img src="../Images/stroeniezemli.jpg.crdownload" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Внутренее строение
+                            планеты Земля.</i></figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                Внутреннее строение Земли достаточно стандартно. Ядро, мантия, кора. Но есть и особенности. Ядро не
+                монолитное, а состоящее из двух компонентов: внешнего, жидкого (2200 км), и внутреннего, твёрдого (1300
+                км). Внутреннее ядро спрессовано из железа и никеля под давлением в 3 млн. атм. Мантия, имеющая 67% всей
+                планетарной массы, разделяется на нижнюю и верхнюю, твёрдую, которая вместе с корой называется
+                литосферой. Она частично расплавлена и состоит в основном из кремния, железа, магния, алюминия,
+                кислорода и их сочетаний. Толщина коры в разных районах планеты различна. В океанических областях она
+                самая тонкая, а в горных районах наиболее массивная. Основные компоненты земной коры – окисиды алюминия,
+                кремния, щелочных металлов.
+            </p>
+            <h2>
+                Магнитное поле</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                По сути, Земля – это генератор постоянного тока. Магнитное поле Земли возникает за счет взаимодействия
+                вращения вокруг собственной оси, с жидким ядром внутри планеты. Оно формирует магнитную оболочку Земли —
+                «магнитосферу». Магнитные бури – это резкие изменения магнитного поля Земля. Они вызываются потоками
+                частичек ионизированного газа, которые двигаются от Солнца (солнечный ветер), после вспышек на нем.
+                Частицы, сталкиваясь с атомами земной атмосферы, образуют одно из красивейших природных явлений –
+                полярные сияния. Особое свечение, обычно происходит около Северных и Южных полюсов, поэтому его еще
+                называют Северным сиянием. Анализ структуры древних каменистых образований показал, что раз в 100 000
+                лет происходит инверсия (смена) Северного и Южного полюсов. Как именно происходит этот процесс, ученые
+                пока точно сказать не могут, но бьются над ответом и на этот вопрос.
+            </p>
+            <h2>
+                Атмосфера Земли
+            </h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Ранее, в состав атмосферы нашей планеты входили метан с двуокисью водяного пара и углекислого газа,
+                водород и аммониак. В дальнейшем, большая часть элементов ушла в пространство. Их заменили водяной пар и
+                углеродный ангидрит. Атмосферу удерживает сила земной гравитации. Она имеет несколько слоев.
+            </p>
+            <p class="text">
+                Состоит из азота (78,08%), кислорода (20,95%), аргона (0,93%) и углекислого газа (0,03%). Оставшуюся
+                часть заполняют различные оксиды и твёрдые частицы. Атмосфера создаёт явление умеренного парникового
+                эффекта, не позволяя теплу уходить в открытый космос.
+            </p>
+            <div class="additional-content">
+                <h2>
+                    Строение атмосферы Земли:
+                </h2>
+                <img src="../Images/layers-atmosphere-347x420.jpg" height="auto" width="39%"
+                    style="float: right; border-radius: 10px; border: 1px solid black; margin-left: 5px; margin-right: 9px;"
+                    id="surfacePlanet" />
+                <p class="text">
+                    1. <strong>Тропосфера.</strong> Главная часть атмосферы, содержащая до 80% общей её массы. Толщина
+                    этого слоя колеблется от 8 км до 18 км, в зависимости от района планеты и сезона.
+                </p>
+                <p class="text">
+                    2. <strong>Стратосфера.</strong> Она простирается до отметки 55 км, и главное её свойство – защита
+                    планеты от ультрафиолетовых лучей посредством озонового слоя.
+                </p>
+                <p class="text">
+                    3. <strong>Мезосфера.</strong> Её граница – 85 км. Температура тут опускается до –100 °C. Здесь
+                    сгорает большинство метеоритов.
+                </p>
+                <p class="text">
+                    4. <strong>Термосфера.</strong> Растягивается до 800 км. Температура здесь от 500°C до 1000°C.
+                </p>
+                <p class="text">
+                    5. <strong>Ионосфера.</strong> Верхний слой находится на высоте около 400 км. Имеет свойство
+                    отражать радиоволны. Здесь происходят полярные сияния.
+                </p>
+                <p class="text">
+                    6. <strong>Экзосфера.</strong> Из этого, очень разреженного слоя, в космос улетают атомы водорода,
+                    поэтому ему дали название: зона рассеивания.
+                </p>
+            </div>
+            <h2>
+                Жизнь на Земле
+            </h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Средняя температура на Земле колеблется около 12 °С. Максимальная в западной сахаре достигает +70 °С,
+                минимальная в Антарктиде доходит до –85 °С. Водная оболочка Земли – гидросфера – занимает 71% , 2/3 или
+                361 млн. км2, поверхности Земли. В Земных океанах находится 97% всех водных запасов. Часть находиться в
+                виде снега и льда, а часть присутствует в атмосфере. Глубина мирового океана в Марианской впадине,
+                составляет 11 тыс. м, а средняя глубина около 3,9 тыс. м. Как на континентах, так и в океанах,
+                присутствуют очень разнообразные и удивительные формы жизни. Ученые всех времен бились над вопросом:
+                откуда же произошла жизнь на Земле? Естественно, что однозначного и точного ответа на этот вопрос просто
+                не существует. Могут быть лишь догадки и предположения.
+            </p>
+            <img src="../Images/Infuzoria.jpg.crdownload" height="auto" width="40%"
+                style="border-radius: 10px; float: right; margin-right: 15px;" id="bakteria" />
+            <p class="text">
+                Одна из версий, которая считается наиболее достоверной и подходит под многочисленные критерии, объединяя
+                разнообразные мнения, заключается в химических реакциях газов. Якобы, Благоприятные условия для
+                формирования жизни, появились благодаря электрическим и магнитным бурям, вызывавшими эти реакции газов,
+                которые находились в уже существующей тогда атмосфере. Продукты таких химических реакций, содержали
+                самые элементарные частицы, которые входили в состав протеинов (аминокислоты). Эти вещества, попали в
+                океаны и продолжили свои реакции уже там. И только через многие миллионы лет, развились первые
+                простейшие, примитивные клетки, способные к воспроизводству или делению. Отсюда и объяснения, что жизнь
+                на Земле произошла из воды. Растительные клетки, синтезировали разные молекулы и питались за счет
+                углекислого ангидрида. Этот процесс, растения делают и сейчас, он называется фотосинтез. В результате
+                фотосинтеза, в нашей атмосфере накапливался кислород, который изменил ее состав и свойства. В результате
+                эволюции, разнообразие живых существ на планете росло, но для поддержания их жизни, был необходим
+                кислород. Так что, без прочного щита нашей планеты – стратосферы, защищающего все живое от
+                радиоактивного солнечного излучения, и кислорода – вырабатываемого растениями, жизни на земле, могло бы
+                и не быть.
+            </p>
+            <h2>
+                Как появилась жизнь на Земле</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Существует много теорий возникновения жизни на Земле, хотя конкретного определения, а что же есть жизнь,
+                пока не выработано. Тем не менее, она как-то возникла, и отныне планета Земля – колыбель разумной жизни
+                во Вселенной!
+            </p>
+            <ul>
+                <li>
+                    <p class="text">
+                        <strong>Креационизм.</strong> Это самая древняя точка зрения на сотворение жизни. Создание жизни
+                        неким творцом, сверхразумом, объясняет всё просто и логично. В Моисеевом Пятикнижие подробно
+                        описано создание Вселенной, Земли и самой жизни. Всё происходит просто и продуманно. Однако её
+                        приверженцев все меньше и меньше.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        <strong>Панспермия.</strong> Соль этой теории в занесении жизни на Землю из космоса. Этот
+                        процесс мог быть случайным, либо преднамеренным. В первом варианте «семена жизни», находящиеся в
+                        газопылевых облаках в просторах космоса, занесены кометами. Вариант второй предполагает, что
+                        планета Земля намеренно заражена жизнью некоей цивилизацией. В таком случае, хочется задать
+                        вопросик: а где же эта мудрая цивилизация?
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        <strong>Самопроизвольное зарождение.</strong> Эта теория имела хождение в древности и в средних
+                        веках. Тогда учёные ещё верили, что живое может происходить от неживого.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        <strong>Стационарное состояние.</strong> Эта теория подразумевают, что вселенная и жизнь в ней
+                        всегда были и всегда будут. Но бесконечность вселенной, а, значит, и жизни, не подтверждается.
+                    </p>
+                </li>
+            </ul>
+            <h2>
+                Немного о нашем спутнике</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <img src="../Images/dc60f94d766ee585a3e4f6773f7e4005_w200.gif" height="auto" width="20%" alt="" title=""
+                style="border-radius: 10px; float: right; margin-right: 15px; margin-left: 14px;" />
+            <p class="text">
+                <strong>Луна</strong> – единственный спутник Земли. Её параметры занимают не последнее место среди
+                спутников других планет. Радиус Луны составляет 0,27 от земного, а масса всего 0,0123. Среднее
+                расстояние от планеты около 380000 км. Есть гипотеза, что при столкновении Земли с неким небесным телом
+                высвободилось вещество, достаточное для создания Луны. Но возможно, Земля и её спутник зарождались
+                одновременно из одного газопылевого облака, или Земля где-то захватила планету и пристроила как своего
+                спутника.
+            </p>
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../Images/look.com.ua-92747.jpg" class="d-block w-100 photo" style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/431122-Kycb_1920x1080.jpg" class="d-block w-100 photo" style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../Images/303414-alexfas01.jpg" class="d-block w-100 photo" style="border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+            <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif; margin-top: 15px;">
+                Интересные факты о Земле</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <ul>
+                <li>
+                    <p class="text">
+                        Ядро Земли содержит столько золота, которого хватит покрыть всю поверхность нашей планеты почти
+                        на 45 сантиметров.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Внутреннее ядро Земли имеет радиус около 1220 километров, что сравнимо с 70% радиуса Луны. Кроме
+                        того, основываясь на геофизических и геохимических методах, есть предположение, что внутреннее
+                        ядро нашей планеты примерно такой же температуры, как Солнце.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Научные данные указывают на то, что Земля образовалась из солнечной туманности около 4,54
+                        миллиарда лет назад. Жизнь на планете появилась примерно 4,25 миллиарда лет назад, то есть
+                        вскоре после её возникновения.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Условия существования жизни на Земле сохраняют озоновый слой и магнитное поле Земли, которые
+                        ослабляют вредную для жизни солнечную радиацию.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Мировой океан занимает около 70,8 % поверхности нашей планеты. Жидкая вода, которая необходима
+                        для всех известных жизненных форм, не существует на поверхности какой-либо из известных планет
+                        Солнечной системы, кроме Земли.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Сила тяжести на полюсах Земли больше, чем на экваторе. Человек, который весит 150,8 фунтов (68,4
+                        кг) на Северном полюсе будет весить на 400 грамм меньше, находясь на экваторе.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Более 68% пресной воды Земли находится в твёрдом состоянии, включая ледники, снежный покров и
+                        вечную мерзлоту.
+                    </p>
+                </li>
+            </ul>
+            <h2>
+                Дополнительная информация</h2>
+            <center>
+                <hr class="horizontal_line" style="width: 100%;" />
+            </center>
+            <img src="../Images/4591e68721e35605419093df41dbb486.gif" height="auto" width="28%" alt="" title=""
+                style="border-radius: 10px; float: right; margin-right: 20px;" />
+            <p class="text">
+                Масса: 5,98 * 1024кг<br />
+                Диаметр на экваторе: 12 742 км<br />
+                Наклон оси: 23,5°<br />
+                Плотность: 5,52 г/см3<br />
+                Температура поверхности: от –85 °С до +70 °С<br />
+                Длительность звёздных суток: 23 часа, 56 минут, 4 секунды<br />
+                Расстояние от Солнца (среднее): 1 а. е. (149,6 млн. км)<br />
+            </p>
+            <button class="btn btn-outline-dark shad toggle" style="width: 100%;" id="nextStep">Читать дальше: планета
+                Марс</button>
+            <button class="btn btn-outline-info shad toggle" style="width: 100%; margin-top: 15px;"
+                id="backToMain">Вернуться обратно к списку планет</button>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">All rights reserved 2020 - 2021 developed by Igor ©</p>
+    </footer>
+
+    <script>
+        arrowTop.onclick = function () {
+            window.scrollTo(pageXOffset, 0);
+        }
+
+        window.addEventListener('scroll', function () {
+            arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+        });
+
+        const nextStepButton = document.getElementById('nextStep');
+        const previousStepButton = document.getElementById('backToMain');
+
+        nextStepButton.addEventListener('click', function () {
+            setTimeout(() => location.href = "Mars.html", 1 * 1200);
+        });
+
+        previousStepButton.addEventListener('click', function () {
+            setTimeout(() => location.href = "Solar_System.html", 1 * 1200);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
