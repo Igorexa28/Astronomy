@@ -1,0 +1,99 @@
+@import "variables";
+@import "mixins";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $backgroundColor;
+}
+
+button {
+    font-family: $fontFamily;
+}
+
+h2 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    font-family: $fontFamily;
+}
+
+#arrowTop {
+    top: 10px;
+    left: 10px;
+    position: fixed;
+    cursor: pointer;
+    color: #000000;
+    @include sizeOfBlock(9px, 14px);
+}
+
+#arrowTop::before {
+    content: '▲';
+}
+
+ul>li {
+    font-size: 18px;
+    font-family: $fontFamily;
+}
+
+.name_planet {
+    text-align: center;
+}
+
+.shad:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.second_header {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+}
+
+.horizontal_line {
+    text-align: center;
+    border: 1px solid $colorText;
+    @include sizeOfBlock(3px, 70%);
+}
+
+#Main {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-left: auto;
+    margin-right: auto;
+    @include sizeOfBlock(auto, 100%);
+    @include flexContainer(row, wrap, center, center);
+
+    .main-content {
+        padding: 5px;
+        margin-top: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        @include sizeOfBlock(auto, 770px);
+    }
+
+    .text {
+        font-size: 19px;
+        text-align: left;
+        padding: 5px 10px;
+        color: $colorText;
+        font-weight: normal;
+        font-family: $fontFamily;
+    }
+
+    .photo {
+        width: 100%;
+        border-radius: 10px;
+        transition: all 1s ease-out;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            transform: scale(1.04);
+        }
+    }
+}
+

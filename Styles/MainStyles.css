@@ -20,13 +20,13 @@ h2 {
 }
 
 #arrowTop {
-  height: 9px;
-  width: 14px;
-  color: black;
-  position: fixed;
   top: 10px;
   left: 10px;
+  position: fixed;
   cursor: pointer;
+  color: #000000;
+  height: 9px;
+  width: 14px;
 }
 
 #arrowTop::before {
@@ -48,68 +48,68 @@ ul > li {
 }
 
 .second_header {
-  text-align: center;
-  font-size: 24px;
   color: #333;
+  font-size: 24px;
+  text-align: center;
 }
 
 .horizontal_line {
-  border: 1px solid #333;
-  width: 70%;
-  height: 3px;
   text-align: center;
+  border: 1px solid #333;
+  height: 3px;
+  width: 70%;
 }
 
 #Main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: auto;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-negative: 1;
-      flex-shrink: 1;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-}
-#Main .main-content {
-  height: auto;
-  width: 770px;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25px;
-  border-radius: 10px;
+  height: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+#Main .main-content {
   padding: 5px;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  height: auto;
+  width: 770px;
 }
 #Main .text {
-  color: #333;
-  font-family: "Times New Roman", Times, serif;
   font-size: 19px;
-  font-weight: normal;
   text-align: left;
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-bottom: 5px;
+  padding: 5px 10px;
+  color: #333;
+  font-weight: normal;
+  font-family: "Times New Roman", Times, serif;
 }
 #Main .photo {
-  border-radius: 10px;
   width: 100%;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   -webkit-transition: all 1s ease-out;
   transition: all 1s ease-out;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 #Main .photo:hover {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
-}/*# sourceMappingURL=Mercury.css.map */
+}/*# sourceMappingURL=MainStyles.css.map */
