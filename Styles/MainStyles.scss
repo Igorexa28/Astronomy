@@ -15,8 +15,8 @@ button {
 }
 
 h2 {
-    color: #333;
     font-size: 24px;
+    color: $colorText;
     text-align: center;
     font-family: $fontFamily;
 }
@@ -48,8 +48,8 @@ ul>li {
 }
 
 .second_header {
-    color: #333;
     font-size: 24px;
+    color: $colorText;
     text-align: center;
 }
 
