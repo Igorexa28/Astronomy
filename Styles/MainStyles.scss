@@ -59,6 +59,17 @@ ul>li {
     @include sizeOfBlock(3px, 70%);
 }
 
+.photo {
+    width: 90%;
+    border-radius: 10px;
+    transition: all 1s ease-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    &:hover {
+        transform: scale(1.04);
+    }
+}
+
 #Main {
     flex-grow: 1;
     flex-shrink: 1;
@@ -91,17 +102,6 @@ ul>li {
         color: $colorText;
         font-weight: normal;
         font-family: $fontFamily;
-    }
-
-    .photo {
-        width: 100%;
-        border-radius: 10px;
-        transition: all 1s ease-out;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-        &:hover {
-            transform: scale(1.04);
-        }
     }
 }
 

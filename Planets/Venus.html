@@ -238,8 +238,8 @@
             arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
         });
 
-        const nextStepButton = document.getElementById('nextStep');
-        const previousStepButton = document.getElementById('previousStep');
+        const nextStepButton = document.querySelector('#nextStep'),
+            previousStepButton = document.querySelector('#previousStep');
 
         nextStepButton.addEventListener('click', function () {
             setTimeout(() => location.href = "Earth.html", 1 * 1400);

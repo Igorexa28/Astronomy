@@ -29,106 +29,23 @@
   <title>Юпитер</title>
 </head>
 
-<body style="background-color:  rgb(248, 248, 248);">
+<body>
   <style>
-    button {
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    ul>li {
-      font-size: 18px;
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    .name_planet {
-      font-family: 'Times New Roman', Times, serif;
-      text-align: center;
-    }
-
-    .horizontal_line {
-      border: 1px solid #333;
-      width: 70%;
-      height: 3px;
-      text-align: center;
-    }
-
-    .photo {
-      height: auto;
-      width: 90%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-      transition: all 1s ease-out;
-    }
-
-    .photo:hover {
-      transform: scale(1.04);
-    }
-
-    .text {
-      color: #333;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 19px;
-      font-weight: normal;
-      text-align: left;
-      padding-top: 5px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 5px;
-    }
-
-    .main-content {
-      height: auto;
-      width: 770px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 25px;
-      margin-bottom: 25px;
-    }
-
-    .shad:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    #Main {
-      display: flex;
-      height: auto;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      flex-direction: row;
-      justify-content: center;
-      flex-shrink: 1;
-      flex-grow: 1;
-    }
-
-    #arrowTop {
-      height: 9px;
-      width: 14px;
-      color: black;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      cursor: pointer;
-    }
-
-    #arrowTop::before {
-      content: '▲';
-    }
-
     .footer-text {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 19px;
+      font-size: 16px;
       text-align: center;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     footer {
-      padding-top: 30px;
-      color: white;
-      height: 80px;
       width: 100%;
+      height: 80px;
+      color: #FFFFFF;
+      padding-top: 30px;
       background-color: #212529;
     }
   </style>
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
     <div class="container-fluid">
       <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;"
@@ -152,8 +69,8 @@
           <li class="nav-item">
             <a class="nav-link active" id="navbarDropdown">
               Юпитер
-              <img src="7YVi.gif" height="20px" width="20px"
-                style="border-radius: 10px; float: right; margin-left: 5px; margin-top: 3px;" alt="" title="" />
+              <img src="../Images/7YVi.gif" height="20px" width="20px"
+                style="border-radius: 10px; float: right; margin-left: 5px; margin-top: 3px;" alt="Гиф-изображение Юпитера" title="Юпитер" />
             </a>
           </li>
         </ul>
@@ -182,29 +99,29 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="yupiter-1920x1080-djuno-4k-hd-yunona-nasa-kosmos-planeta-13549.jpg" class="d-block w-100 photo"
-              style="border-radius: 10px;">
+            <img src="../Images/yupiter-1920x1080-djuno-4k-hd-yunona-nasa-kosmos-planeta-13549.jpg" class="d-block w-100 photo"
+              style="border-radius: 10px;" alt="Снимок Юпитера" titile="Юпитер">
           </div>
           <div class="carousel-item">
-            <img src="thumb-1920-878584.jpg" class="d-block w-100 photo" style="border-radius: 10px;">
+            <img src="../Images/thumb-1920-878584.jpg" class="d-block w-100 photo" style="border-radius: 10px;" alt="Снимок Юпитера" titile="Юпитер">
           </div>
           <div class="carousel-item">
-            <img src="0fymtd7tms9z (1).png" class="d-block w-100 photo" style="border-radius: 10px;">
+            <img src="../Images/0fymtd7tms9z (1).png" class="d-block w-100 photo" style="border-radius: 10px;" alt="Снимок Юпитера" titile="Юпитер">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
           data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span class="visually-hidden">Предыдущий</span>
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
           data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span class="visually-hidden">Следующий</span>
         </button>
       </div>
-      <p class="text">
-        Пятой и самой большой планетой в солнечной системе, известной с древнейших времен, является Юпитер. Газовый
+      <p class="text" style="margin-top: 15px;">
+        Пятой и самой большой планетой в солнечной системе, известной с древнейших времен, является <strong>Юпитер</strong>. Газовый
         гигант получил имя в честь древнеримского бога Юпитера, аналогичному Зевсу-громовержцу у греков. Юпитер
         находится за поясом астероидов и почти полностью состоит из газов, преимущественно – водорода и гелия. Масса
         Юпитера настолько огромна (М = 1,9∙1027 кг), что почти в 2,5 раза превышает массу всех вместе взятых планет
@@ -229,7 +146,7 @@
         планета. Поэтому скорость вращения на разных широтах неодинакова. У полюсов, планета имеет сильное сжатие, из-за
         быстрого вращения вокруг оси. Скорость ветров превышает 600км/ч.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Внутреннее строение</h2>
       <center>
         <hr class="horizontal_line" />
@@ -242,7 +159,7 @@
       <figure>
         <center>
           <p>
-            <img src="Jupiter-layers.jpg" class="photo" alt="" title="" />
+            <img src="../Images/Jupiter-layers.jpg" class="photo" alt="Изображение внутреннего строения Юпитера" title="Внутренее строение Юпитера" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Внутренее строение планеты
               Юпитер.</i></figcaption>
@@ -255,7 +172,7 @@
         километров и немного захватывает орбиту Сатурна. Поле имеет вытянутую форму, и в сторону Солнца оно в 40 раз
         меньше.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Атмосфера</h2>
       <center>
         <hr class="horizontal_line" />
@@ -269,14 +186,15 @@
       <figure>
         <center>
           <p>
-            <img src="Jupiter_space_planet_Solar_System_science-1721419.jpg" class="photo" alt="" title="" />
+            <img src="../Images/Jupiter_space_planet_Solar_System_science-1721419.jpg" class="photo" alt="Новый снимок Юпитера" title="Юпитер на боку" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Новые изображения планеты Юпитер из открытого космоса.</i>
           </figcaption>
         </center>
       </figure>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">Пятна
+      <h2>
+        Пятна
       </h2>
       <center>
         <hr class="horizontal_line" />
@@ -290,7 +208,7 @@
       <figure>
         <center>
           <p>
-            <img src="jupiter-earth.jpg" class="photo" alt="" title="" />
+            <img src="../Images/jupiter-earth.jpg" class="photo" alt="Изображение сравнительного размера Земли и красного пятна" title="Сравнение Земли и красного пятна" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Сравнительные размеры большого красного пятна и планеты Земля.</i>
@@ -308,7 +226,8 @@
           </p>
         </div>
       </center>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">Кольца
+      <h2>
+        Кольца
       </h2>
       <center>
         <hr class="horizontal_line" />
@@ -322,19 +241,19 @@
       <figure>
         <center>
           <p>
-            <img src="Jupiter_Rings_ru.svg" class="photo" alt="" title="" />
+            <img src="../Images/Jupiter_Rings_ru.svg" class="photo" alt="Схематическое изображение колец Юпитера" title="Юпитер и его система колец" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Структура колец газового гиганта Юпитера.</i>
           </figcaption>
         </center>
       </figure>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Магнитное поле Юпитера</h2>
       <center>
         <hr class="horizontal_line" />
       </center>
-      <img src="jupitermag1.jpg.crdownload"
+      <img src="../Images/jupitermag1.jpg.crdownload" alt="Изображение магнитного поля Юпитера" title="Юпитер и его магнитное поле"
         style="float: right; border-radius: 10px; width: 35%; height: auto; margin-right: 20px;" />
       <p class="text">
         Магнитное поле Юпитера настолько огромно, что выходит даже за орбиту Сатурна и составляет около 650 000 000 км.
@@ -344,7 +263,7 @@
         Земле, тоже имеются 2 магнитных инвертированных полюса. Но стрелка компаса на газообразном гиганте всегда
         показывает на юг.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Спутники Юпитера</h2>
       <center>
         <hr class="horizontal_line" />
@@ -352,7 +271,7 @@
       <figure>
         <center>
           <p>
-            <img src="Sputtniki-galileya.jpg" class="photo" alt="" title="" />
+            <img src="../Images/Sputtniki-galileya.jpg" class="photo" alt="Изображение 4-х Галилеевых спутников" title="Галилеевы спутники" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Галилеевы спутники - крупнейшие спутники Юпитера.</i>
@@ -384,7 +303,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Europa-moon.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Europa-moon.jpg" class="photo" alt="Снимок Европы" title="Европа" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Европа в натуральных
                       цветах (снимок «Галилео»).</i></figcaption>
@@ -415,16 +334,16 @@
                 Европы на предмет её обитаемости, запуск наиболее вероятен в середине 2020-х гг. Запуск аппарата для
                 изучения ледяных спутников Юпитера, Jupiter Icy Moon Explorer (JUICE), запланирован на 2022 год.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Внутренее строение</h2>
+              <h2>
+                Внутренее строение
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
               <figure>
                 <center>
                   <p>
-                    <img src="1280px-PIA01130_Interior_of_Europa_RUS.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/1280px-PIA01130_Interior_of_Europa_RUS.jpg" class="photo" alt="Изображение внутренего строения Европы" title="Внутренее строение" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Внутреннее строение
                       Европы.</i></figcaption>
@@ -442,9 +361,9 @@
                 существования этого океана — указания на то, что кора Европы когда-то сдвинулась на 80° относительно
                 недр, что было бы невозможно, если бы они прочно прилегали друг к другу.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Поверхность</h2>
+              <h2>
+                Поверхность
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
@@ -478,7 +397,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="800px-Io_highest_resolution_true_color.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/800px-Io_highest_resolution_true_color.jpg" class="photo" alt="Снимок ИО" title="ИО" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Фото Ио, сделанное
                       аппаратом «Галилео» в 1999 году. Желтоватый цвет говорит о высоком содержании серы. Тёмное пятно
@@ -487,9 +406,9 @@
                 </center>
               </figure>
               <p class="text">
-                <strong>>И́ó</strong (др.-греч. Ἰώ) — спутник Юпитера, самый близкий к планете из четырёх галилеевых
-                  спутников. Назван в честь мифологической Ио — жрицы Геры и возлюбленной Зевса. Имеет диаметр 3642 км,
-                  что делает его четвёртым по величине спутником в Солнечной системе. </p> <p class="text">
+                <strong>И́ó</strong> (др.-греч. Ἰώ) — спутник Юпитера, самый близкий к планете из четырёх галилеевых
+                спутников. Назван в честь мифологической Ио — жрицы Геры и возлюбленной Зевса. Имеет диаметр 3642 км,
+                что делает его четвёртым по величине спутником в Солнечной системе. </p> <p class="text">
                 Этот спутник — самое геологически активное тело Солнечной системы, на нём более 400 действующих
                 вулканов. Такая активность обусловлена периодическим нагревом недр спутника в результате трения, которое
                 происходит, скорее всего, из-за приливных гравитационных воздействий со стороны Юпитера, Европы и
@@ -521,8 +440,7 @@
                 обнаружили связь между спутником и магнитосферой Юпитера и радиационный пояс вдоль орбиты Ио. Человек на
                 поверхности Ио получал бы поглощённую дозу радиации около 3600 рад (36 Гр) в день.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Внутренее строение</h2>
               <center>
                 <hr class="horizontal_line" />
@@ -530,7 +448,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="1280px-PIA01129_Interior_of_Io.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/1280px-PIA01129_Interior_of_Io.jpg" class="photo" alt="Изображение внутренего строения ИО" title="Внутренее строение ИО" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Модель возможного
                       внутреннего строения Ио с ядром, состоящим из железа или сульфида железа (выделено серым цветом),
@@ -551,16 +469,16 @@
                 железа и серы — в пределах 550—900 км. Магнитометр «Галилео» не обнаружил у Ио собственного магнитного
                 поля, и это указывает на то, что в её железном ядре нет конвекции.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Поверхность</h2>
+              <h2>
+                Поверхность
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
               <figure>
                 <center>
                   <p>
-                    <img src="Io_from_Galileo_and_Voyager_missions_RUS.jpg" class="photo" alt="" title="" id="Io_map" />
+                    <img src="../Images/Io_from_Galileo_and_Voyager_missions_RUS.jpg" class="photo" alt="Схематическое изображение поверхности ИО" title="Поверхность ИО" id="Io_map" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Карта поверхности Ио.</i>
@@ -606,7 +524,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Callisto.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Callisto.jpg" class="photo" alt="Снимок Каллисто" title="Каллисто" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Сильно кратерированное противоюпитерианское полушарие Каллисто. Фото сделал в 2001 году КА НАСА
@@ -628,8 +546,7 @@
                 «Пионер-11», «Вояджер-1», «Вояджер-2», «Кассини» и «Новые горизонты» — изучали спутник во время полёта к
                 другим объектам.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Внутренее строение</h2>
               <center>
                 <hr class="horizontal_line" />
@@ -637,7 +554,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="1280px-PIA01478_Interior_of_Callisto.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/1280px-PIA01478_Interior_of_Callisto.jpg" class="photo" alt="Изображение внутреннего строения Каллисто" title="Каллисто внутренне строение" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Модель внутреннего строения Каллисто. Показаны ледяная кора, возможный водный океан и ядро из
@@ -666,16 +583,16 @@
                 3,6 г/см3. Таким образом, недра Каллисто разительно отличаются от недр Ганимеда, которые, судя по всему,
                 дифференцированы полностью.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Поверхность</h2>
+              <h2>
+                Поверхность
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
               <figure>
                 <center>
                   <p>
-                    <img src="Valhalla_crater_on_Callisto.jpg" class="photo" alt="" title="" id="Callisto_map" />
+                    <img src="../Images/Valhalla_crater_on_Callisto.jpg" class="photo" alt="Снимок поверхности Каллисто" title="Поверхность Каллисто" id="Callisto_map" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Изображение Вальхаллы, многокольцевой астроблемы с диаметром около 3800 км, полученное КА
@@ -741,7 +658,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Ganymede_g1_true_2.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Ganymede_g1_true_2.jpg" class="photo" alt="Снимок Ганимеда с близкого расстояния" title="Ганимед" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Изображение противоюпитерианского полушария Ганимеда, сделанное КА «Галилео». Светлые
@@ -776,16 +693,16 @@
                 кислород), O2 (кислород) и, возможно, O3 (озон). Количество атомарного водорода (H) в атмосфере
                 незначительно. Есть ли у Ганимеда ионосфера, неясно.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Внутренее строение</h2>
+              <h2>
+                Внутренее строение
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
               <figure>
                 <center>
                   <p>
-                    <img src="Ганимед.svg.png" class="photo" alt="" title="" />
+                    <img src="../Images/Ганимед.svg.png" class="photo" alt="Изображение внутреннего строения Ганимеда" title="Внутреннее строение Ганимеда" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Возможное внутреннее строение Ганимеда.</i>
@@ -819,16 +736,16 @@
                 слоями льда разных типов (лёд Ih, III, V, VI). Количество жидких прослоек, возможно, достигает 4; их
                 солёность растёт с глубиной.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-                Поверхность</h2>
+              <h2>
+                Поверхность
+              </h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
               <figure>
                 <center>
                   <p>
-                    <img src="PIA00081_Ganymede_Voyager_2_mosaic.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/PIA00081_Ganymede_Voyager_2_mosaic.jpg" class="photo" alt="Снимок поверхности Ганимеда" title="Поверхность Ганимеда" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Мозаика из фотографий противоюпитерианского полушария Ганимеда. Тёмная древняя зона в верхнем
@@ -883,13 +800,14 @@
         </div>
       </div>
 
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
-        Дополнительная информация</h2>
+      <h2>
+        Дополнительная информация
+      </h2>
       <center>
         <hr class="horizontal_line" />
       </center>
-      <img src="7YVi.gif" height="auto" width="28%" style="border-radius: 10px; float: right; margin-right: 20px;"
-        alt="" title="" />
+      <img src="../Images/7YVi.gif" height="auto" width="28%" style="border-radius: 10px; float: right; margin-right: 20px;"
+        alt="Гиф-изображение Юпитера" title="Юпитер" />
       <p class="text">
         Масса: 1,9*1027 кг (в 318 раз больше массы Земли)<br />
         Диаметр на полюсе: 133708 км<br />
@@ -901,13 +819,13 @@
       </p>
       <button class="btn btn-outline-dark shad toggle" style="width: 100%; margin-top: 15px;" id="nextStep">Читать
         дальше: планета Сатурн</button>
-      <button class="btn btn-outline-info shad toggle" style="width: 100%; margin-top: 15px; margin-bottom: 5px;"
+      <button class="btn btn-outline-info shad toggle" style="width: 100%; margin-top: 15px; margin-bottom: 25px;"
         id="backToMain">Вернуться обратно к списку планет</button>
     </div>
   </div>
 
   <footer>
-    <p class="footer-text">All rights reserved 2020- 2021 developed by Igor ©</p>
+    <p class="footer-text">All rights reserved 2020 - 2021 developed by Igor ©</p>
   </footer>
 
   <script>
@@ -917,30 +835,6 @@
 
     window.addEventListener('scroll', function () {
       arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
-    });
-
-    const mapIo = document.querySelector('#Io_map');
-
-    mapIo.addEventListener('mouseover', function (event) {
-      event.target.style.width = '100%';
-      event.target.style.height = 'auto';
-    });
-
-    mapIo.addEventListener('mouseout', function (event) {
-      event.target.style.width = '90%';
-      event.target.style.height = 'auto';
-    });
-
-    const mapCallisto = document.querySelector('#Callisto_map');
-
-    mapCallisto.addEventListener('mouseover', function (event) {
-      event.target.style.width = '100%';
-      event.target.style.height = 'auto';
-    });
-
-    mapCallisto.addEventListener('mouseout', function (event) {
-      event.target.style.width = '90%';
-      event.target.style.height = 'auto';
     });
 
     const nextStepBtn = document.querySelector('#nextStep'),
