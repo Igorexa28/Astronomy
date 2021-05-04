@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            var placeForSmall = $("#navbarDropdown");
+
+            var smallImage = $("<img />");
+            smallImage.attr("src", "LonelyFlimsyBluetonguelizard-size_restricted.gif");
+
+            smallImage.css({
+                "float": "right",
+                "height": "auto",
+                "width": "29px",
+                "margin-left": "5px",
+                "margin-top": "3px",
+                "border-radius": "10px"
+            });
+
+            smallImage.appendTo(placeForSmall);
+
+            var mainBlock = $(".main-content");
+
+            var addInfoHeader = $("<h2></h2>").text("Дополнительная информация");
+
+            addInfoHeader.css({
+                "text-align": "center",
+                "font-size": "24px",
+                "color": "#333",
+                "font-family": "'Times New Roman', Times, serif"
+            });
+
+            mainBlock.append(addInfoHeader);
+
+            var addHorizontal = $("<center><hr class='horizontal_line' /></center>");
+
+            mainBlock.append(addHorizontal);
+
+            var image = $("<img />");
+
+            image.attr("src", "LonelyFlimsyBluetonguelizard-size_restricted.gif");
+            image.css({
+                "height": "auto",
+                "width": "32%",
+                "border-radius": "10px",
+                "float": "right",
+                "margin-right": "20px"
+            });
+
+            mainBlock.append(image);
+
+            var text =
+                "Масса: 5,69*1026 кг (в 95 раз больше Земли)<br/>Диаметр на экваторе: 120536 км (в 9,5 раз больше Земли)<br/>Диаметр на полюсе: 108728 км<br/>Температура верхних слоев: около –189 °C<br/>Наклон оси: 26,7°<br/>Плотность: 0,69 г/см³<br/>Расстояние от Солнца (среднее): 9,5 а. е. или 1430 млн. км";
+
+            var addInfo = $("<p class='text'></p>").html(text);
+            mainBlock.append(addInfo);
+
+            var nextBtn = $(
+                "<button class='btn btn-outline-dark shad toggle'>Читать дальше: планета Уран</button>");
+
+            var mainBtn = $(
+                "<button class='btn btn-outline-info shad toggle'>Вернуться обратно к списку планет</button>"
+            );
+
+            nextBtn.css({
+                "width": "100%",
+                "margin-top": "15px"
+            });
+
+            mainBtn.css({
+                "width": "100%",
+                "margin-top": "15px",
+                "margin-bottom": "5px"
+            });
+
+            mainBlock.append(nextBtn);
+            mainBlock.append(mainBtn);
+
+            nextBtn.on("click", function () {
+                setTimeout(() => location.href = "Uranus.html", 1 * 1200);
+            });
+
+            mainBtn.on("click", function () {
+                setTimeout(() => location.href = "Solar_System.html", 1 * 1200);
+            });
+
+            $(".photo").mouseenter("click", function () {
+                $(this).css({
+                    "width": "95%",
+                    "height": "95%"
+                });
+            });
+
+            $(".photo").mouseleave(function () {
+                $(this).css({
+                    "width": "90%",
+                    "height": "auto"
+                });
+            });
+        });
+    </script>
+    <title>Сатурн</title>
+</head>
+
+<body style="background-color:  rgb(248, 248, 248);">
+    <style>
+        button {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        ul>li {
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .name_planet {
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+        }
+
+        .horizontal_line {
+            border: 1px solid #333;
+            width: 70%;
+            height: 3px;
+            text-align: center;
+        }
+
+
+        #arrowTop {
+            height: 9px;
+            width: 14px;
+            color: black;
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            cursor: pointer;
+        }
+
+        #arrowTop::before {
+            content: '▲';
+        }
+
+        #Main {
+            display: flex;
+            height: auto;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            flex-direction: row;
+            justify-content: center;
+            flex-shrink: 1;
+            flex-grow: 1;
+        }
+
+        .main-content {
+            height: auto;
+            width: 770px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .shad:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .photo {
+            height: auto;
+            width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: all 1s ease-out;
+        }
+
+        .photo:hover {
+            transform: scale(1.04);
+        }
+
+        .text {
+            color: #333;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 19px;
+            font-weight: normal;
+            text-align: left;
+            padding-top: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 5px;
+        }
+
+        .footer-text {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 19px;
+            text-align: center;
+        }
+
+        footer {
+            padding-top: 30px;
+            color: white;
+            height: 80px;
+            width: 100%;
+            background-color: #212529;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;"
+                href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+                style="text-decoration: none;">Солнечная система</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="Mercury.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Astronomy.html">Астрономия</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Goroskop_new.html">Знаки зодиака</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="navbarDropdown">
+                            Сатурн
+                        </a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Введите что-то" style="font-family: 'Times New Roman', Times, serif;" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Поиск</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div id="Main">
+        <div id="arrowTop" hidden></div>
+        <div class="main-content">
+            <h1 class="name_planet"
+                style="color: #333; font-family: 'Times New Roman', Times, serif; padding-top: 10px;">Сатурн - украшение
+                Солнечной системы</h1>
+            <hr class="horizontal_line" style="width: 100%;" />
+            <div id="carouselExampleIndicators" class="carousel slide border-radius" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="kosmos-saturn-saturn-1333906.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="kosmos-saturn-galaktika-vselennaya-plane-997500.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="kosmos-saturn-thanks-cassini-huygens-kol-1322832.jpg" class="d-block w-100 photo"
+                            style="border-radius: 10px;">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <p class="text">
+                Известный с древних времен – Сатурн – является шестой планетой нашей солнечной системы, знаменитой
+                своими кольцами. Она входит в состав четырех газовых планет-гигантов, таких как Юпитер, Уран и Нептун.
+                Своими размерами (диаметр = 120 536 км), она уступает только Юпитеру и является второй по величине во
+                всей солнечной системе. Ее назвали в честь древнеримского бога Сатурна, который у греков, именовался
+                Кронос (титан и отец самого Зевса).
+            </p>
+            <p class="text">
+                Саму планету, вместе с кольцами, можно разглядеть с Земли, даже в обычный небольшой телескоп. Сутки на
+                Сатурне, составляют 10 часов 15 минут, а период вращения вокруг Солнца составляет почти 30 лет! Сатурн –
+                это уникальная планета, т.к. его плотность 0,69 г/см³, а это меньше плотности воды 0,99 г/см³. Отсюда
+                следует интересная закономерность: если бы, была возможность погрузить планету в огромный океан или
+                бассейн, то Сатурн смог бы удержаться на воде и плавать в ней.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Внутреннее строение</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Внутреннее строение очень схоже с таковым у Юпитера. Ученые предполагают, что в центре планеты находится
+                большое силикатно – металлическое ядро. Так, на глубине около 30 000 км. температура составляет 10000
+                °С, а давление около 3 млн. атмосфер. В самом ядре, давление ещё более высокое, так же как и
+                температура. В нём и находится источник тепла, согревающий всю планету. Сатурн выделяет больше тепла,
+                чем получает от солнца.
+            </p>
+            <figure>
+                <center>
+                    <p>
+                        <img src="unnam.png" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Внутренее строение планеты Сатурн.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                Ядро окружено водородом, находящимся в металлическом состоянии, а над ним, уже ближе к поверхности, слой
+                жидкого молекулярного водорода, переходящего в свою газовую фазу, примыкающую к атмосфере. Магнитное
+                поле планеты имеет уникальную особенность, которая заключается в совпадении с осью вращения планеты. У
+                магнитосферы Сатурна симметричный вид, но радиационные полюса правильной формы и имеют пустоты.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Атмосфера</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <figure>
+                <center>
+                    <p>
+                        <img src="Big-oval.jpg" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Снимок атмосферы Сатурна с большим приближением.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                В атмосфере Сатурна бушуют сильные ветра. Их скорость настолько велика, что составляет около 500 км/ч, а
+                порой, достигает и 1500 км/ч. Согласитесь, довольно неприятное явление, но с Земли (если смотреть в
+                телескоп) они выглядят очень красиво. На планете бушуют настоящие циклоны, самым большим из которых
+                является Большой белый овал. Он получил это название за внешний вид, и представляет из себя мощнейший
+                антициклон, систематически появляющийся на поверхности примерно один раз в тридцать лет. Размеры его
+                просто гигантские, и составляют около 17 тысяч километров.
+            </p>
+            <figure>
+                <center>
+                    <p>
+                        <img src="oval-696x449.jpg" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Правильный шестиугольник образованный на северном полюсе Сатурна.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                Атмосфера планеты стоит в основном из водорода и гелия, имеется совсем немного немного азота. В верхних
+                слоях наблюдаются аммиачные облака.
+            </p>
+            <p class="text">
+                Имеются и такие образования, как пятна. Правда они не так заметны, как, например, у Юпитера, но всё —
+                таки, некоторые довольно большие и достигают около 11 тыс. км. То есть, довольно внушительны. Есть и
+                светлые пятна, они намного меньше, всего около 3 тыс. км, а так же, коричневые, размеры которых
+                составляют 10 тыс. км.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Поверхность</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                У Сатурна нет твёрдой поверхности, а то, что мы видим, это только верхушки облаков. Их верхний слой
+                состоит из замёрзшего аммиака, а нижний — из аммония. Чем ближе к планете, тем плотнее и горячее
+                водородная атмосфера.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Кольца</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Первым, кто увидел кольца, был великий Галилео Галилей, и было это аж в 1610 году. Уже позже, при помощи
+                более мощного телескопа, голландский астроном Гюйгенс, предположил, что Сатурн имеет два кольца: одно
+                тонкое и одно плоское. На самом же деле, их на много больше, и состоят они из многочисленных кусочков
+                льда, камней, самых разных размеров, сметающих всё на своём пути. Кольца просто огромные. Самое большое
+                из них, превосходит размеры планеты в 200 раз. По сути, это мусор, который остался от разрушенных комет,
+                спутников и иных космических отходов.
+            </p>
+            <figure>
+                <center>
+                    <p>
+                        <img src="Saturn_Ring.jpg" class="photo" alt="" title="" id="rings" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Подробное изображение структуры колец Сатурна.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                Интересно, что кольца тоже имеют название. Они расположены в алфавитном порядке, то есть это кольцо А,
+                В, С и так далее.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Природа колец</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                Плоскость обращения системы колец совпадает с плоскостью экватора Сатурна. Размер частиц материала в
+                кольцах — от микрометров до сантиметров и (реже) десятков метров. Состав главных колец: водяной лёд
+                (около 99 %) с примесями силикатной пыли. Толщина колец чрезвычайно мала по сравнению с их шириной (от 7
+                до 80 тысяч километров над экватором Сатурна) и составляет от одного километра до десяти метров. Общая
+                масса обломочного материала в системе колец оценивается в 3×1019 килограммов.
+            </p>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Происхождение колец</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <figure>
+                <center>
+                    <p>
+                        <img src="Кольца_Сатурна._Фото_спутника_НАСА-870x905.jpg" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Кольца Сатурна с расстояния 1,8 млн км под углом 30 градусов. Фото межпланетной станции
+                            «Кассини», 2006 год.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <ul>
+                <li>
+                    <p class="text">
+                        Все планеты образуются из пыли и мелких осколков, но, возможно, гравитационной силы Сатурна
+                        недостаточно для того, чтобы вещество из своих колец использовать для строительства своей
+                        планеты, но вполне достаточно, чтобы не отпускать их от себя.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        По другой гипотезе, Сатурн столкнулся с другим довольно большим телом, в результате чего оно
+                        было уничтожено и развалилось на мелкие кусочки, а потом со временем равномерно распространилось
+                        по орбите.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Согласно новой модели, виной всему несколько последовательных поглощений Сатурном его спутников,
+                        миллиарды лет назад обращавшихся вокруг молодого газового гиганта. Расчеты Кануп показывают, что
+                        после формирования Сатурна, примерно 4,5 миллиарда лет назад, на заре Солнечной системы, вокруг
+                        него вращалось несколько крупных спутников, каждый из которых был в полтора раза больше Луны.
+                        Постепенно из-за гравитационного воздействия эти спутники один за другим «сваливались» в недра
+                        Сатурна. Из «первичных» спутников на сегодняшний день остался только Титан. В процессе схода со
+                        своих орбит и вхождения в спиральную траекторию эти спутники разрушались. При этом легкая
+                        ледяная составляющая оставалась в космосе, тогда как тяжелые минеральные компоненты небесных тел
+                        поглощались планетой. Впоследствии лед захватывался гравитацией следующего спутника Сатурна, и
+                        цикл вновь повторялся. Когда произошел захват Сатурном последнего из своих «первичных»
+                        спутников, ставшего гигантским ледяным шаром с твердым минеральным ядром, вокруг планеты
+                        образовалось «облако» изо льда. Фрагменты этого «облака» имели от 1 до 50 километров в диаметре
+                        и сформировали первичное кольцо Сатурна. По массе это кольцо превышало современную систему колец
+                        в 1 тысячу раз, однако в течение последующих 4,5 миллиарда лет соударения образующих кольцо
+                        ледяных глыб привели к измельчению льда до размеров градин. При этом большая часть вещества была
+                        поглощена планетой, а также утрачена при взаимодействии с астероидами и кометами, многие из
+                        которых также стали жертвами гравитации Сатурна.
+                    </p>
+                </li>
+            </ul>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Спутники Сатурна</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <p class="text">
+                У Сатурна всего 61 спутник. Они имеют различную форму, но в большинстве своём они малых размеров. В
+                основном представляют из себя ледяное образование и только некоторые имеют примеси горных пород.
+                Названия многих спутников произошли от имён титанов, и их потомков, так как само название планеты
+                происходит от Кроноса, который повелевал ими.
+            </p>
+            <figure>
+                <center>
+                    <p>
+                        <img src="Saturn-moons.jpg" class="photo" alt="" title="" />
+                    </p>
+                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                        <i>Спутники планеты Сатурн.</i>
+                    </figcaption>
+                </center>
+            </figure>
+            <p class="text">
+                Христиан Гюйгенс, удостоился чести открыть второй по величине спутник, после Ганимера, во всей солнечной
+                системе. По своим размерам он больше Меркурия, а его диаметр составляет 5155 км. Атмосфера Титана
+                красно-оранжевая: 87% занимает азот, 11% – аргон, 2% – метан. Естественно, что там проходят метановые
+                дожди, а на поверхности должны быть моря, в состав которых входит метан. Впрочем, аппарат «Вояджер — 1»,
+                который исследовал Титан, не смог разглядеть его поверхность, через такую плотную атмосферу. Спутник
+                Энцелад – это самое светлое солнечное тело во всей солнечной системе. Он отражает более 99% солнечного
+                света, из-за своей, почти, белой поверхности, состоящей из водяного льда. Его альбедо (характеристика
+                отражательно поверхности) более 1. Так же из более известных и наиболее исследованных спутников, стоит
+                отметить «Мимас», «Тефею» и «Диону».
+            </p>
+            <p class="text">
+                Самые крупные спутники планеты — Титан, Феба, Энцелад, Мимас, Тефия, Диона, Рея, Гиперион и Япет. Они,
+                кроме Фебы, вращаются синхронно и постоянно обращены одной стороной относительно Сатурна.
+            </p>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" style="font-family: 'Times New Roman', Times, serif;"
+                            type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                            aria-expanded="false" aria-controls="flush-collapseOne">
+                            Титан - спутник Сатурна
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                            <figure>
+                                <center>
+                                    <p>
+                                        <img src="Two_Halves_of_Titan.png" class="photo" alt="" title="" />
+                                    </p>
+                                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                                        <i>Титан в натуральных цветах (снимок «Кассини»).</i>
+                                    </figcaption>
+                                </center>
+                            </figure>
+                            <p class="text">
+                                Тита́н (др.-греч. Τιτάν) — крупнейший спутник Сатурна, второй по величине спутник в
+                                Солнечной системе (после спутника Юпитера Ганимеда), является единственным, кроме Земли,
+                                телом в Солнечной системе, для которого доказано стабильное существование жидкости на
+                                поверхности, и единственным спутником планеты, обладающим плотной атмосферой.
+                            </p>
+                            <p class="text">
+                                Титан стал первым известным спутником Сатурна — в 1655 году его обнаружил голландский
+                                астроном Христиан Гюйгенс.
+                            </p>
+                            <h2
+                                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                                Внутренее строение</h2>
+                            <center>
+                                <hr class="horizontal_line" />
+                            </center>
+                            <p class="text">
+                                Титан состоит примерно наполовину из водяного льда и наполовину — из скальных пород. По
+                                составу Титан схож с некоторыми другими крупными спутниками газовых планет: Ганимедом,
+                                Европой, Каллисто, Тритоном, но сильно отличается от них составом и структурой своей
+                                атмосферы.
+                            </p>
+                            <h2
+                                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                                Поверхность</h2>
+                            <center>
+                                <hr class="horizontal_line" />
+                            </center>
+                            <figure>
+                                <center>
+                                    <p>
+                                        <img src="1920px-First_global_geologic_map_of_Titan_(PIA23174).jpg"
+                                            class="photo" style="border: 1px solid black;" alt="" title="" />
+                                    </p>
+                                    <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                                        <i>Геологическая карта Титана (2019).</i>
+                                    </figcaption>
+                                </center>
+                            </figure>
+                            <img src="Huygens_surface_color_sr.jpg" heigth="auto" width="30%"
+                                style="float: right; border-radius: 10px; border: 1px solid black;" />
+                            <p class="text">
+                                Поверхность Титана, сфотографированная «Кассини» в различных спектральных диапазонах, в
+                                низких широтах разделена на несколько светлых и тёмных областей с чёткими границами. В
+                                районе экватора на ведущем полушарии расположен светлый регион размером с Австралию
+                                (видимый также на инфракрасных снимках телескопа «Хаббл»). Он получил название Ксанаду
+                                (Xanadu).
+                            </p>
+                            <p class="text">
+                                На радарных снимках, сделанных в апреле 2006 года, видны горные хребты высотой более 1
+                                км, долины, русла рек, стекающих с возвышенностей, а также тёмные пятна (заполненные или
+                                высохшие озера). Заметна сильная эрозия горных вершин, потоки жидкого метана во время
+                                сезонных ливней могли образовать пещеры в горных склонах. К юго-востоку от Ксанаду
+                                расположено загадочное образование Hotei Arcus, представляющее собой яркую (особенно на
+                                некоторых длинах волн) дугу. Является ли эта структура «горячим» вулканическим районом
+                                или отложением какого-то вещества (например, углекислотного льда), пока неясно.
+                            </p>
+                            <p class="text">
+                                В экваториальном светлом регионе Адири обнаружены протяжённые цепи гор (или холмов)
+                                высотой до нескольких сотен метров. Предположительно, в южном полушарии может
+                                существовать массивный горный хребет протяжённостью около 150 км и высотой до 1,6 км. В
+                                горах Митрим обнаружен пик высотой 3337 метра. На вершинах гор есть светлые отложения —
+                                возможно, залежи метана и других органических материалов. Все это свидетельствует о
+                                тектонических процессах, формирующих поверхность Титана.
+                            </p>
+                            <p class="text">
+                                В целом рельеф Титана относительно ровный — вариация по высоте не более 2 км, однако
+                                локальные перепады высот, как показывают данные радара и стереоснимки, полученные
+                                «Гюйгенсом», могут быть весьма значительными; крутые склоны на Титане не редкость. Это
+                                является результатом интенсивной эрозии при участии ветра и жидкости. Ударных кратеров
+                                на Титане немного (по состоянию на 2012 год точно идентифицировано 7 и предположительно
+                                — 52). Это следствие того, что их относительно быстро скрывают осадки и сглаживает
+                                ветровая эрозия. Поверхность Титана в умеренных широтах менее контрастна.
+                            </p>
+                            <p class="text">
+                                Для некоторых деталей поверхности Титана предполагается криовулканическое происхождение.
+                                Это в первую очередь гора Дум с прилегающими патерой Сотра и потоком Мохини, гора Эребор
+                                и потокообразные объекты в области Хотэя.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Интересные факты</h2>
+            <center>
+                <hr class="horizontal_line" />
+            </center>
+            <ul>
+                <li>
+                    <p class="text">
+                        Сатурн — это гигантская газообразная планета без твёрдой поверхности. То есть, то, что мы можем
+                        видеть, это не является твёрдым, а всего лишь облака.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        На Сатурне сутки длятся 10,7 часов, это то время, которое необходимо планете для совершения
+                        одного оборота вокруг своей оси. Продолжительность года составляет 29,5 земных лет.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        Сатурн является самой разряженной планетой в солнечной системе. Плотность составляет меньше
+                        плотности воды. А вращение планеты настолько велико, что она сплющивается со стороны полюсов.
+                    </p>
+                </li>
+                <li>
+                    <p class="text">
+                        У Сатурна имеется феномен, который называется «Гигантский гексагон». Ни одна другая планета в
+                        солнечной системе не имеет этого. Что это такое? Это довольно устойчивое образование,
+                        представляющее из себя правильный шестиугольник, который окружает северный полюс планеты. Этот
+                        атмосферный феномен до сих пор ещё никто не может объяснить. Предполагается, что это головная
+                        часть вихря, основная масса которого находится в глубине водородной атмосферы. Размеры его
+                        огромны и составляют 25 тыс. километров.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p class="footer-text">All rights reserved 2020- 2021 developed by Igor ©</p>
+    </footer>
+
+    <script>
+        arrowTop.onclick = function () {
+            window.scrollTo(pageXOffset, 0);
+        };
+
+        window.addEventListener('scroll', function () {
+            arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
