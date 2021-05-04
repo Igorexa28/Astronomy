@@ -74,6 +74,14 @@ ul>li {
         margin-right: auto;
         border-radius: 10px;
         @include sizeOfBlock(auto, 770px);
+
+        #main-photo {
+            transition: all .6s linear;
+
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
     }
 
     .text {

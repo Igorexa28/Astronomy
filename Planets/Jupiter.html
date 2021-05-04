@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Styles/MainStyles.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var images = $(".photo");
+      images.mouseenter(function () {
+        $(this).css({
+          "width": "95%",
+          "height": "auto"
+        });
+      });
+      images.mouseleave(function () {
+        $(this).css({
+          "width": "90%",
+          "height": "auto"
+        });
+      });
+    });
+  </script>
+  <title>Юпитер</title>
+</head>
+
+<body style="background-color:  rgb(248, 248, 248);">
+  <style>
+    button {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    ul>li {
+      font-size: 18px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .name_planet {
+      font-family: 'Times New Roman', Times, serif;
+      text-align: center;
+    }
+
+    .horizontal_line {
+      border: 1px solid #333;
+      width: 70%;
+      height: 3px;
+      text-align: center;
+    }
+
+    .photo {
+      height: auto;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      transition: all 1s ease-out;
+    }
+
+    .photo:hover {
+      transform: scale(1.04);
+    }
+
+    .text {
+      color: #333;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 19px;
+      font-weight: normal;
+      text-align: left;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 5px;
+    }
+
+    .main-content {
+      height: auto;
+      width: 770px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+
+    .shad:hover {
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #Main {
+      display: flex;
+      height: auto;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      flex-direction: row;
+      justify-content: center;
+      flex-shrink: 1;
+      flex-grow: 1;
+    }
+
+    #arrowTop {
+      height: 9px;
+      width: 14px;
+      color: black;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      cursor: pointer;
+    }
+
+    #arrowTop::before {
+      content: '▲';
+    }
+
+    .footer-text {
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 19px;
+      text-align: center;
+    }
+
+    footer {
+      padding-top: 30px;
+      color: white;
+      height: 80px;
+      width: 100%;
+      background-color: #212529;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+    <div class="container-fluid">
+      <a class="navbar-brand" style="font-family: 'Times New Roman', Times, serif; font-size: 22px;"
+        href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+        style="text-decoration: none;">Солнечная система</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Mercury.html">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Astronomy.html">Астрономия</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Goroskop_new.html">Знаки зодиака</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" id="navbarDropdown">
+              Юпитер
+              <img src="7YVi.gif" height="20px" width="20px"
+                style="border-radius: 10px; float: right; margin-left: 5px; margin-top: 3px;" alt="" title="" />
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Введите что-то" style="font-family: 'Times New Roman', Times, serif;" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Поиск</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="Main">
+    <div id="arrowTop" hidden></div>
+    <div class="main-content">
+      <h1 class="name_planet" style="color: #333; font-family: 'Times New Roman', Times, serif; padding-top: 10px;">
+        Юпитер - гигант Солнечной Системы</h1>
+      <hr class="horizontal_line" style="width: 100%;" />
+      <div id="carouselExampleIndicators" class="carousel slide border-radius" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="yupiter-1920x1080-djuno-4k-hd-yunona-nasa-kosmos-planeta-13549.jpg" class="d-block w-100 photo"
+              style="border-radius: 10px;">
+          </div>
+          <div class="carousel-item">
+            <img src="thumb-1920-878584.jpg" class="d-block w-100 photo" style="border-radius: 10px;">
+          </div>
+          <div class="carousel-item">
+            <img src="0fymtd7tms9z (1).png" class="d-block w-100 photo" style="border-radius: 10px;">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <p class="text">
+        Пятой и самой большой планетой в солнечной системе, известной с древнейших времен, является Юпитер. Газовый
+        гигант получил имя в честь древнеримского бога Юпитера, аналогичному Зевсу-громовержцу у греков. Юпитер
+        находится за поясом астероидов и почти полностью состоит из газов, преимущественно – водорода и гелия. Масса
+        Юпитера настолько огромна (М = 1,9∙1027 кг), что почти в 2,5 раза превышает массу всех вместе взятых планет
+        солнечной системы. Вокруг оси, Юпитер вращается со скоростью 9 часов 55 минут, а орбитальная скорость равна 13
+        км/с. Сидерический период (период вращения по своей орбите) составляет 11,87 лет.
+      </p>
+      <p class="text">
+        Юпитер — поистине украшение нашей солнечной системы. Тёмной ночью ярчайшая жемчужина восходит на востоке,
+        придавая особенный шарм звёздному небу. По яркости планета немного уступает только Венере. Ещё в древности яркое
+        око планеты восхищало и поражало людей. Не случайно и названа она была именем древнеримского верховного
+        бога-громовержца.
+      </p>
+      <p class="text">
+        По степени освещенности, не считая Солнце, Юпитер уступает только Венере, поэтому является прекрасным объектом
+        для наблюдений. Он светится белым светом с альбедо 0, 52. При хорошей погоде, даже в простейший телескоп, можно
+        разглядеть не только саму планету, но и четыре крупнейших спутника.
+        Формирование Солнца и остальных планет началось миллиарды лет назад из общего газопылевого облака. Так вот
+        Юпитеру досталось 2/3 массы от массы всех планет в солнечной системе. Но, так как планета легче самой маленькой
+        звезды в 80 раз, термоядерные реакции так и не начались. Однако планета выделяет в 1,5 раза больше энергии, чем
+        получает от Солнца. Собственный источник тепла, связан в первую очередь с радиоактивными распадами энергии и
+        вещества, которое высвобождается в процессе сжатия. Все дело в то, что Юпитер не твердое тело, а газообразная
+        планета. Поэтому скорость вращения на разных широтах неодинакова. У полюсов, планета имеет сильное сжатие, из-за
+        быстрого вращения вокруг оси. Скорость ветров превышает 600км/ч.
+      </p>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Внутреннее строение</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        Поскольку Юпитер – газовая планета, то поверхности, как мы это понимаем, она не имеет. Вероятно, что в центре
+        газового гиганта есть очень плотное ядро. Оно спрессовано под огромным давлением 30 – 100 миллионов атмосфер. И
+        температура ядра тоже впечатляет – около 30 000 °С.
+      </p>
+      <figure>
+        <center>
+          <p>
+            <img src="Jupiter-layers.jpg" class="photo" alt="" title="" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Внутренее строение планеты
+              Юпитер.</i></figcaption>
+        </center>
+      </figure>
+      <p class="text">
+        На стокилометровой глубине находится океан из этого жидкого водорода. А ниже 17 000 километров водород сжимается
+        с такой силой, что приобретает свойства металла. Это состояние позволяет водороду проводить электричество,
+        создавая вокруг планеты магнитное поле. Размеры магнитного поля огромны, оно растягивается на 650 миллионов
+        километров и немного захватывает орбиту Сатурна. Поле имеет вытянутую форму, и в сторону Солнца оно в 40 раз
+        меньше.
+      </p>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Атмосфера</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        Атмосфера Юпитера кардинально отличается от земной. Она большей частью состоит из водорода (около 89%) и гелия
+        (около 11%). Но имеются малые примеси метана, аммиака, ацетилена и водных паров. Если взглянуть на планету
+        сквозь линзы телескопа, то станет видно, что атмосфера её есть сочетание параллельных полос различного цвета –
+        красного, белого, жёлтого, синего. Тёмные пояса и светлые зоны – это цветные облака в верхних атмосферных слоях.
+      </p>
+      <figure>
+        <center>
+          <p>
+            <img src="Jupiter_space_planet_Solar_System_science-1721419.jpg" class="photo" alt="" title="" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+            <i>Новые изображения планеты Юпитер из открытого космоса.</i>
+          </figcaption>
+        </center>
+      </figure>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">Пятна
+      </h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        Отличительная особенность Юпитера – наличие пятен. Установлено, что это гигантские вихри, которые могут длиться
+        недели, месяцы и годы. Одно из таких пятен имеет размеры в поперечнике 15 000 километров. Самое знаменитое —
+        Большое Красное Пятно. Оно было замечено ещё в 1664 году французским астрономом Кассини. За эти сотни лет оно
+        практически не переместилось и почти не изменилось по форме и размерам.
+      </p>
+      <figure>
+        <center>
+          <p>
+            <img src="jupiter-earth.jpg" class="photo" alt="" title="" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+            <i>Сравнительные размеры большого красного пятна и планеты Земля.</i>
+          </figcaption>
+        </center>
+      </figure>
+      <center>
+        <div class="secondary border border-dark rounded"
+          style="width: 90%; padding: 5px; padding-bottom: 0px; border-width: 3px; margin-bottom: 10px;">
+          <p class="text">
+            Характеристики Большого Красного пятна впечатляют: 12 000 километров на 48 000 километров. Есть мнение, что
+            это гигантский вихрь или огромное облако. Существует также гипотеза, что пятно – результат столкновения
+            планеты с каким-то крупным объектом. Якобы, этот объект выбил планетное вещество, которое оторвалось и
+            улетело в космос.
+          </p>
+        </div>
+      </center>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">Кольца
+      </h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <p class="text">
+        Также как Сатурн и Уран, Юпитер обзавёлся кольцами. Но его система колец достаточно слабая. Они состоят в
+        основном из пыли и газа. Система колец имеет четыре компонента. Толстый тор из мелких частиц. Яркое, очень
+        тонкое «Главное кольцо» и два более широких, «паутинных кольца». Окрас колец в видимой части спектра
+        красноватый, а у первого – синий.
+      </p>
+      <figure>
+        <center>
+          <p>
+            <img src="Jupiter_Rings_ru.svg" class="photo" alt="" title="" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+            <i>Структура колец газового гиганта Юпитера.</i>
+          </figcaption>
+        </center>
+      </figure>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Магнитное поле Юпитера</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <img src="jupitermag1.jpg.crdownload"
+        style="float: right; border-radius: 10px; width: 35%; height: auto; margin-right: 20px;" />
+      <p class="text">
+        Магнитное поле Юпитера настолько огромно, что выходит даже за орбиту Сатурна и составляет около 650 000 000 км.
+        Оно превышает земное почти в 12 раз, а наклон магнитной оси, составляет 11° относительно оси вращения.
+        Металлический водород, присутствующий в недрах планеты и объясняет наличие столь мощного магнитного поля. Он
+        является отличным проводником и, вращаясь с огромной скоростью, образует магнитные поля. На Юпитере, как и на
+        Земле, тоже имеются 2 магнитных инвертированных полюса. Но стрелка компаса на газообразном гиганте всегда
+        показывает на юг.
+      </p>
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Спутники Юпитера</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <figure>
+        <center>
+          <p>
+            <img src="Sputtniki-galileya.jpg" class="photo" alt="" title="" />
+          </p>
+          <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+            <i>Галилеевы спутники - крупнейшие спутники Юпитера.</i>
+          </figcaption>
+        </center>
+      </figure>
+      <p class="text">
+        К 2009 году было выявлено <strong>63</strong> спутника Юпитера. Наиболее известны так называемые галилеевы
+        спутники, впервые обнаруженные учёным в 1610 году. Это Ганимед, Каллисто, Европа и Ио. Ганимед по размерам
+        превосходит Меркурий, а Каллисто, практически равный ему, имеет тёмную поверхность, испещрённую кратерами.
+        Европа окована ледяным панцирем стокилометровой толщины. Из-за этого она отражает свет также ярко, как Венера.
+        Самый живописный спутник – это Ио. Он имеет оттенки жёлтого, чёрного и красного цветов. Это связано с активной
+        вулканической деятельностью, от действия которой фонтаны серы извергаются на высоту 200 километров над
+        поверхностью.
+      </p>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button"
+              style="font-family: 'Times New Roman', Times, serif;" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Спутник Юпитера - Европа
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse"
+            style="font-family: 'Times New Roman', Times, serif;" aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <figure>
+                <center>
+                  <p>
+                    <img src="Europa-moon.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Европа в натуральных
+                      цветах (снимок «Галилео»).</i></figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                <strong>Евро́па</strong> (др.-греч. Ἐυρώπη), или Юпитер II — шестой по отдалённости от планеты спутник
+                Юпитера, наименьший из четырёх галилеевых спутников. Обнаружена в 1610 году Галилео Галилеем и,
+                вероятно, Симоном Марием в то же самое время. На протяжении столетий за Европой велись всё более
+                всесторонние наблюдения при помощи телескопов, а начиная с семидесятых годов двадцатого века — и
+                пролетающих вблизи космических аппаратов.
+              </p>
+              <p class="text">
+                По размерам уступает Луне. Европа состоит в основном из силикатных пород, а в центре содержит железное
+                ядро. Поверхность состоит изо льда и является одной из самых гладких в Солнечной системе; на ней очень
+                мало кратеров, но много трещин. Легко заметная молодость и гладкость поверхности привели к гипотезе, что
+                под ней находится водяной океан, в котором не исключено наличие микроскопической жизни. Вероятно, он не
+                замерзает благодаря приливным силам, периодические изменения которых вызывают деформацию спутника и, как
+                следствие, нагрев его недр. Это же служит причиной эндогенной геологической активности Европы,
+                напоминающей тектонику плит. У спутника есть крайне разрежённая атмосфера, состоящая в основном из
+                кислорода.
+              </p>
+              <p class="text">
+                Интересные характеристики Европы, особенно возможность обнаружения внеземной жизни, привели к целому
+                ряду предложений по исследованиям спутника. Миссия космического аппарата «Галилео», начавшаяся в 1989
+                году, предоставила большую часть современных данных о Европе. В бюджете NASA на 2016 год выделены
+                средства на разработку автоматической межпланетной станции Europa Clipper, предназначенной для изучения
+                Европы на предмет её обитаемости, запуск наиболее вероятен в середине 2020-х гг. Запуск аппарата для
+                изучения ледяных спутников Юпитера, Jupiter Icy Moon Explorer (JUICE), запланирован на 2022 год.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Внутренее строение</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="1280px-PIA01130_Interior_of_Europa_RUS.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Внутреннее строение
+                      Европы.</i></figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Европа больше похожа на планеты земной группы, чем другие «ледяные спутники», и в значительной степени
+                состоит из камня. Внешние слои спутника (толщиной предположительно 100 км) состоят из воды — частью в
+                виде ледяной коры толщиной 10—30 км, а частью, как полагают, — в виде подповерхностного жидкого океана.
+                Ниже лежат горные породы, а в центре, предположительно, находится небольшое металлическое ядро. Главный
+                признак наличия океана — магнитное поле Европы, обнаруженное «Галилео». Оно всегда направлено против
+                юпитерианского (хотя последнее на разных участках орбиты Европы ориентировано по-разному). Это означает,
+                что его создают электрические токи, индуцированные в недрах Европы магнитным полем Юпитера.
+                Следовательно, там есть слой с хорошей проводимостью — скорее всего, океан солёной воды. Другой признак
+                существования этого океана — указания на то, что кора Европы когда-то сдвинулась на 80° относительно
+                недр, что было бы невозможно, если бы они прочно прилегали друг к другу.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Поверхность</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <p class="text">
+                Поверхность Европы одна из самых ровных в Солнечной системе, лишь немногие образования, напоминающие
+                холмы, имеют высоту до нескольких сотен метров. Высокое альбедо спутника — около 0,65 — свидетельствует
+                о том, что поверхностный лёд относительно чистый и, следовательно, молодой (полагают, что, чем чище лёд
+                на поверхности «ледяных спутников», тем он моложе). Характер поверхности Европы на мелких масштабах
+                остаётся невыясненным, поскольку наиболее детализированный снимок поверхности Европы (сделанный
+                аппаратом «Галилео» с высоты 560 км 16 декабря 1997 года) имеет разрешение всего 6 м на пиксель. Ещё 15
+                изображений имеют разрешение 9–12 м на пиксель. Снимок одной из наиболее интересных с научной точки
+                зрения областей Европы — пятна Тера (лат. Thera Macula) — имеет разрешение 220 м на пиксель. Более
+                детализированные снимки будут получены не ранее декабря 2030 года, когда аппарат JUICE совершит два
+                облёта вокруг Европы на высоте 400—500 км.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button"
+              style="font-family: 'Times New Roman', Times, serif;" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Спутник Юпитера - ИО
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse"
+            style="font-family: 'Times New Roman', Times, serif;" aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <figure>
+                <center>
+                  <p>
+                    <img src="800px-Io_highest_resolution_true_color.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Фото Ио, сделанное
+                      аппаратом «Галилео» в 1999 году. Желтоватый цвет говорит о высоком содержании серы. Тёмное пятно
+                      левее центра — извергающийся вулкан Прометей, его окружают светлые равнины, покрытые оксидом
+                      серы.</i></figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                <strong>>И́ó</strong (др.-греч. Ἰώ) — спутник Юпитера, самый близкий к планете из четырёх галилеевых
+                  спутников. Назван в честь мифологической Ио — жрицы Геры и возлюбленной Зевса. Имеет диаметр 3642 км,
+                  что делает его четвёртым по величине спутником в Солнечной системе. </p> <p class="text">
+                Этот спутник — самое геологически активное тело Солнечной системы, на нём более 400 действующих
+                вулканов. Такая активность обусловлена периодическим нагревом недр спутника в результате трения, которое
+                происходит, скорее всего, из-за приливных гравитационных воздействий со стороны Юпитера, Европы и
+                Ганимеда. У некоторых вулканов выбросы серы и диоксида серы настолько сильны, что поднимаются на высоту
+                500 километров. На поверхности Ио можно заметить более ста гор, которые выросли благодаря сжатию в
+                основании силикатной коры спутника. Некоторые из этих пиков выше Джомолунгмы — например, гора Южная
+                Боосавла превышает её вдвое. В отличие от большинства спутников во внешней части Солнечной системы
+                (которые в основном состоят из водяного льда), Ио в основном состоит из силикатных пород, окружающих
+                расплавленное ядро из железа или сернистого железа. Бо́льшую часть поверхности Ио занимают равнины,
+                покрытые серой или замёрзшим диоксидом серы.
+              </p>
+              <p class="text">
+                Вулканизм придаёт поверхности Ио уникальные особенности. Вулканический пепел и потоки лавы постоянно
+                изменяют поверхность и окрашивают её в различные оттенки жёлтого, белого, красного, чёрного и зелёного
+                (во многом благодаря аллотропам и соединениям серы). Потоки лавы на Ио достигают длины 500 километров.
+                Вулканические выбросы создают тонкую неоднородную атмосферу Ио и потоки плазмы в магнитосфере Юпитера, в
+                том числе огромный плазменный тор вокруг него.
+              </p>
+              <p class="text">
+                Ио сыграла значительную роль в развитии астрономии XVII—XVIII веков. Её, вместе с другими галилеевыми
+                спутниками, открыл Галилео Галилей в 1610 году. Это открытие способствовало принятию модели Солнечной
+                системы Коперника, разработке законов движения планет Кеплера и первому измерению скорости света. Ио
+                наблюдали только как яркую точку вплоть до конца XIX — начала XX века, когда стало возможным рассмотреть
+                самые большие детали её поверхности — тёмно-красный полярный и светлый экваториальный районы. В 1979
+                году два космических корабля «Вояджер» представили Ио миру как геологически активный спутник с
+                многочисленными вулканами, большими горами и сравнительно молодой поверхностью без заметных ударных
+                кратеров. Космический аппарат «Галилео» выполнил несколько близких пролётов в 1990-х и в начале 2000-х
+                годов, получив данные о внутренней структуре и составе поверхности Ио. Эти космические корабли также
+                обнаружили связь между спутником и магнитосферой Юпитера и радиационный пояс вдоль орбиты Ио. Человек на
+                поверхности Ио получал бы поглощённую дозу радиации около 3600 рад (36 Гр) в день.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Внутренее строение</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="1280px-PIA01129_Interior_of_Io.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;"><i>Модель возможного
+                      внутреннего строения Ио с ядром, состоящим из железа или сульфида железа (выделено серым цветом),
+                      силикатной корой (выделено коричневым) и частично расплавленной силикатной мантией между ними
+                      (выделено оранжевым).</i></figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Ио, состоящая в основном из силикатных пород и железа, ближе по составу к планетам земной группы, чем к
+                другим спутникам во внешней части Солнечной системы (которые состоят главным образом из водяного льда и
+                силикатов). Средняя плотность Ио равна 3,5275 г/см3, что больше, чем у других галилеевых спутников (и
+                даже чем у Луны), и это ставит Ио на первое место по плотности среди спутников в Солнечной системе[66].
+                Модели, составленные по измеренным «Вояджерами» и «Галилео» массе, радиусу и коэффициентам
+                гравитационного квадруполя (числа, описывающие распределение массы в пределах объекта), указывают на то,
+                что Ио расслоена на ядро из железа или сульфида железа и кору с мантией, которые богаты силикатами[43].
+                Металлическое ядро составляет приблизительно 20 % массы Ио. Радиус ядра зависит от содержания серы: если
+                оно состоит из чистого железа, его радиус лежит в пределах 350—650 км, а если оно состоит из соединений
+                железа и серы — в пределах 550—900 км. Магнитометр «Галилео» не обнаружил у Ио собственного магнитного
+                поля, и это указывает на то, что в её железном ядре нет конвекции.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Поверхность</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="Io_from_Galileo_and_Voyager_missions_RUS.jpg" class="photo" alt="" title="" id="Io_map" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Карта поверхности Ио.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                По аналогии с древней поверхностью Луны, Марса и Меркурия учёные ожидали увидеть на первых изображениях
+                Ио, полученных «Вояджером-1», многочисленные ударные кратеры (а их концентрация позволила бы оценить
+                возраст поверхности). Но они были весьма удивлены, обнаружив, что ударных кратеров там почти нет. Вместо
+                них видны гладкие равнины, усеянные высокими горами, потоками лавы и ямами различных форм и размеров. В
+                отличие от большинства других космических объектов, Ио покрыта множеством разноцветных веществ, в
+                основном модификациями и соединениями серы. Малое количество ударных кратеров показывает, что
+                поверхность Ио, как и поверхность Земли, геологически молода. Кратеры на Ио быстро покрываются
+                вулканическими выбросами. Эти выводы были подтверждены по меньшей мере девятью действующими вулканами,
+                наблюдавшимися «Вояджером-1».
+              </p>
+              <p class="text">
+                В дополнение к вулканам на Ио есть невулканические горы, вязкие лавовые потоки, достигающие длины в
+                сотни километров, озёра расплавленной серы и кальдеры, глубина которых доходит до нескольких километров.
+              </p>
+              <p class="text">
+                В 2012 году была составлена полная геологическая карта Ио, для которой использовались изображения с
+                разной детализацией, которые при помощи компьютера склеили в единую мозаику с разрешением 1 км на
+                пиксель. Карта составлялась 6 лет. Возглавил проект Дэвид Уильямс (David Williams) из университета
+                Аризоны. Исследователи также составили онлайновую базу данных по Ио, включающую не только новую
+                геологическую карту, но и многочисленные снимки с космических аппаратов и данные ряда иных измерений.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button"
+              style="font-family: 'Times New Roman', Times, serif;" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              Спутник Юпитера - Каллисто
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <figure>
+                <center>
+                  <p>
+                    <img src="Callisto.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Сильно кратерированное противоюпитерианское полушарие Каллисто. Фото сделал в 2001 году КА НАСА
+                      «Галилео». В верхнем правом углу изображения виднеется крупная кольцевая деталь Асгард, кратер с
+                      радиальными лучами ниже и правее центра называется Бран.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                <strong>Калли́сто</strong> (лат. Callisto; др.-греч. Καλλιστώ) — второй по размеру спутник Юпитера
+                (после Ганимеда), один из четырёх галилеевых спутников и самый удалённый среди них от планеты. Является
+                третьим по величине спутником в Солнечной системе после Ганимеда и Титана. Был открыт в 1610 году
+                Галилео Галилеем, назван в честь персонажа древнегреческой мифологии — Каллисто, любовницы Зевса.
+              </p>
+              <p class="text">
+                Благодаря низкому уровню радиационного фона в окрестностях Каллисто и её размерам её часто предлагают
+                для основания станции, которая послужит для дальнейшего освоения системы Юпитера человечеством[9]. На
+                2015 год основной объём знаний об этом спутнике получен аппаратом «Галилео»; другие АМС — «Пионер-10»,
+                «Пионер-11», «Вояджер-1», «Вояджер-2», «Кассини» и «Новые горизонты» — изучали спутник во время полёта к
+                другим объектам.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Внутренее строение</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="1280px-PIA01478_Interior_of_Callisto.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Модель внутреннего строения Каллисто. Показаны ледяная кора, возможный водный океан и ядро из
+                      льдов и камней.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Сильно изрытый кратерами поверхностный слой Каллисто покоится на холодной и жёсткой ледяной литосфере,
+                толщина которой по разным оценкам составляет от 80 до 150 км. Если исследования магнитных полей вокруг
+                Юпитера и его спутников были интерпретированы верно, то под ледяной корой может находиться солёный океан
+                глубиной 50—200 км. Было обнаружено, что Каллисто взаимодействует с магнитным полем Юпитера как хорошо
+                проводящий шар: поле не может проникнуть в недра спутника, что указывает на наличие сплошного слоя из
+                электропроводящей жидкости толщиной не менее 10 км. Существование океана становится более вероятным,
+                если предположить наличие в нём небольшого количества (до 5 % по массе) аммиака или иного антифриза. В
+                таком случае глубина океана может доходить до 250—300 км. Покоящаяся над океаном литосфера может быть
+                несколько толще — до 300 км.
+              </p>
+              <p class="text">
+                Недра Каллисто, лежащие ниже литосферы и предполагаемого океана, судя по всему, не являются ни полностью
+                однородными, ни полностью расслоёнными, а представляют собой смесь веществ с постепенным ростом доли
+                силикатов с глубиной. На это указывает низкое значение момента инерции[h] спутника (по данным «Галилео»
+                он равен (0,3549 ± 0,0042)×mr2). Другими словами, Каллисто лишь частично дифференцирована. Значения
+                плотности и момента инерции совместимы с наличием в центре спутника маленького силикатного ядра. В любом
+                случае, радиус такого ядра не может превышать 600 км, а его плотность может лежать в пределах от 3,1 до
+                3,6 г/см3. Таким образом, недра Каллисто разительно отличаются от недр Ганимеда, которые, судя по всему,
+                дифференцированы полностью.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Поверхность</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="Valhalla_crater_on_Callisto.jpg" class="photo" alt="" title="" id="Callisto_map" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Изображение Вальхаллы, многокольцевой астроблемы с диаметром около 3800 км, полученное КА
+                      Вояджер-1.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Древняя поверхность Каллисто — одна из самых сильно кратерированных в Солнечной системе. Плотность
+                кратеров на поверхности спутника настолько велика, что почти каждый новый ударный кратер накладывается
+                на старый или ложится так близко к соседнему, что его разрушает. Крупномасштабная геология Каллисто
+                относительно проста: на спутнике нет никаких крупных гор, вулканов и подобных эндогенных тектонических
+                структур. Ударные кратеры и многокольцевые структуры вместе со связанными разломами, уступами и
+                отложениями — единственные крупные геоструктуры, различимые на поверхности.
+              </p>
+              <p class="text">
+                Поверхность Каллисто можно разделить на следующие геологически отличные регионы: кратерированные
+                равнины, светлые равнины, яркие и тёмные гладкие равнины, а также различные районы, связанные с ударными
+                кратерами и частями многокольцевых геоструктур. Кратерированные равнины покрывают бо́льшую часть
+                поверхности спутника, и это самые древние её участки. Они покрыты смесью льдов и скальных пород. Светлые
+                равнины не так распространены. Они включают яркие ударные кратеры вроде Бура и Лофна, а также следы от
+                более древних и крупных кратеров, известные как палимпсесты,[i] центральные регионы многокольцевых
+                геоструктур и изолированные участки на кратерированных равнинах. Считается, что светлые равнины покрыты
+                ледяными выбросами импактного происхождения. Яркие, сглаженные равнины редко встречаются на поверхности
+                Каллисто и представлены в основном в районе впадин и борозд около Вальхаллы и Асгарда, или некоторыми
+                участками кратерированных равнин. Первоначально считалось, что они связаны с эндогенной активностью
+                спутника, но фотографии с высоким разрешением, сделанные КА «Галилео», демонстрируют, что яркие и
+                гладкие равнины связаны с потрескавшейся и бугристой поверхностью и не имеют признаков тектонического
+                или вулканического происхождения. Изображения с КА «Галилео» также позволили различить небольшие тёмные
+                сглаженные районы площадью менее 10 000 км2, которые окружают более пересечённую местность. Возможно,
+                они покрыты выбросами криовулканов. Так как плотность кратеров в равнинных участках ниже фоновой, эти
+                участки должны быть относительно молодыми.
+              </p>
+              <p class="text">
+                Крупнейшие геоструктуры на Каллисто — многокольцевые бассейны, которые иногда называют амфитеатрами или
+                цирками из-за своего внешнего вида. Наиболее крупный из них — Вальхалла с ярким центральным регионом
+                диаметром 600 км, который окружают концентрические кольца радиусом до 1800 км. Вторая по величине
+                цирковая структура, Асгард, имеет поперечник приблизительно 1600 км. Многокольцевые структуры, вероятно,
+                образованы разломами литосферы, лежащей на рыхлых или жидких слоях (возможно, на океане) после
+                столкновений с крупными небесными телами. Также на поверхности Каллисто есть цепочки из ударных кратеров
+                (иногда слившихся друг с другом). Вероятно, они возникли при столкновении с Каллисто остатков объектов,
+                которые, подойдя чрезмерно близко к Юпитеру — ещё до своего столкновения с Каллисто, — были разрушены
+                приливными силами. Возможно также, что цепочки образовались при пологих касательных столкновениях с
+                постепенным разрушением падающих тел. В последнем случае их разрушение могло произойти вследствие их
+                взаимодействия с неровностями рельефа спутника, либо быть результатом комбинации приливного действия
+                Каллисто и центробежных сил из-за их собственного вращения (см. также Спутники астероидов).
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingFour">
+            <button class="accordion-button collapsed" type="button"
+              style="font-family: 'Times New Roman', Times, serif;" data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+              Спутник Юпитера - Ганимед
+            </button>
+          </h2>
+          <div id="flush-collapseFour" class="accordion-collapse collapse"
+            style="font-family: 'Times New Roman', Times, serif;" aria-labelledby="flush-headingFour"
+            data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              <figure>
+                <center>
+                  <p>
+                    <img src="Ganymede_g1_true_2.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Изображение противоюпитерианского полушария Ганимеда, сделанное КА «Галилео». Светлые
+                      поверхности, следы недавних ударных столкновений, изборождённая поверхность и белая северная
+                      полярная шапка (в верхнем правом углу изображения) богаты водяным льдом.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Ганиме́д (др.-греч. Γανυμήδης) — один из галилеевых спутников Юпитера, седьмой по расстоянию от него
+                среди всех его спутников и крупнейший спутник в Солнечной системе. Его диаметр равен 5268 километрам,
+                что на 2 % больше, чем у Титана (второго по величине спутника в Солнечной системе) и на 8 % больше, чем
+                у Меркурия. При этом масса Ганимеда составляет всего 45 % массы Меркурия, но среди спутников планет она
+                рекордно велика. Луну Ганимед превышает по массе в 2,02 раза. Совершая оборот вокруг Юпитера примерно за
+                семь дней, Ганимед участвует в орбитальном резонансе 1:2:4 с двумя другими его спутниками — Европой и
+                Ио.
+              </p>
+              <p class="text">
+                Ганимед состоит из примерно равного количества силикатных пород и водяного льда. Это полностью
+                дифференцированное тело с жидким ядром, богатым железом. Предположительно, в его недрах на глубине около
+                200 км между слоями льда есть океан жидкой воды. На поверхности Ганимеда наблюдаются два типа ландшафта.
+                Треть поверхности спутника занимают тёмные области, испещрённые ударными кратерами. Их возраст доходит
+                до четырёх миллиардов лет. Остальную площадь занимают более молодые светлые области, покрытые бороздами
+                и хребтами. Причины сложной геологии светлых областей до конца не ясны. Вероятно, она связана с
+                тектонической активностью, вызванной приливным нагревом.
+              </p>
+              <p class="text">
+                Ганимед — единственный спутник в Солнечной системе, обладающий собственной магнитосферой. Скорее всего,
+                её создаёт конвекция в жидком ядре, богатом железом. Небольшая магнитосфера Ганимеда заключена в
+                пределах намного большей магнитосферы Юпитера и лишь немного деформирует её силовые линии. У спутника
+                есть тонкая атмосфера, в состав которой входят такие аллотропные модификации кислорода, как O (атомарный
+                кислород), O2 (кислород) и, возможно, O3 (озон). Количество атомарного водорода (H) в атмосфере
+                незначительно. Есть ли у Ганимеда ионосфера, неясно.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Внутренее строение</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="Ганимед.svg.png" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Возможное внутреннее строение Ганимеда.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Предположительно Ганимед состоит из трёх слоёв: расплавленного ядра из железа или сульфида железа,
+                силикатной мантии и внешнего слоя льда толщиной 900—950 километров. В пользу этой модели свидетельствует
+                малый момент инерции, измеренный во время облёта Ганимеда «Галилео» — (0,3105 ± 0,0028)×mr2] (момент
+                инерции однородного шара равен 0,4×mr2, а меньшее значение коэффициента в этой формуле говорит о том,
+                что плотность растёт с глубиной). У Ганимеда этот коэффициент самый низкий среди твёрдых тел Солнечной
+                системы, что говорит о ярко выраженной расслоенности его недр. Существование расплавленного богатого
+                железом ядра даёт естественное объяснение собственного магнитного поля Ганимеда, которое было обнаружено
+                «Галилео». Конвекция в расплавленном железе, которое обладает высокой электропроводностью, — самое
+                разумное объяснение происхождения магнитного поля.
+              </p>
+              <p class="text">
+                Точная толщина различных слоёв в недрах Ганимеда зависит от принятого значения состава силикатов (доли
+                оливина и пироксенов), а также от количества серы в ядре. Наиболее вероятное значение радиуса ядра —
+                700—900 км, а толщины внешней ледяной мантии — 800—1000 км. Остаток радиуса приходится на силикатную
+                мантию. Плотность ядра — предположительно 5,5—6 г/см3, а силикатной мантии — 3,4—3,6 г/см3. Некоторые
+                модели генерирования магнитного поля Ганимеда требуют наличия твёрдого ядра из чистого железа внутри
+                жидкого ядра из Fe и FeS, что схоже со структурой земного ядра. Радиус этого ядра может достигать 500
+                километров. Температура в ядре Ганимеда предположительно составляет 1500—1700 К, а давление — до 10 ГПа.
+              </p>
+              <p class="text">
+                Исследования магнитного поля Ганимеда указывают на то, что под его поверхностью может быть океан жидкой
+                воды. Численное моделирование недр спутника, выполненное в 2014 году сотрудниками Лаборатории
+                реактивного движения НАСА, показало, что этот океан, вероятно, многослойный: жидкие слои разделены
+                слоями льда разных типов (лёд Ih, III, V, VI). Количество жидких прослоек, возможно, достигает 4; их
+                солёность растёт с глубиной.
+              </p>
+              <h2
+                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+                Поверхность</h2>
+              <center>
+                <hr class="horizontal_line" />
+              </center>
+              <figure>
+                <center>
+                  <p>
+                    <img src="PIA00081_Ganymede_Voyager_2_mosaic.jpg" class="photo" alt="" title="" />
+                  </p>
+                  <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
+                    <i>Мозаика из фотографий противоюпитерианского полушария Ганимеда. Тёмная древняя зона в верхнем
+                      правом углу — область Галилея. Её отделяют от области Мариуса (меньшей тёмной области левее)
+                      светлые рытвины Урук. Яркая лучистая структура внизу — свежий лёд, выброшенный при появлении
+                      относительно молодого кратера Осирис.</i>
+                  </figcaption>
+                </center>
+              </figure>
+              <p class="text">
+                Поверхность Ганимеда представляет собой смесь участков двух типов: очень древних сильно кратерированных
+                тёмных областей и несколько более молодых (но всё-таки древних) светлых областей, покрытых бороздами,
+                канавками и гребнями. Тёмные участки поверхности занимают примерно 1/3 всей площади и содержат глины и
+                органические вещества, что может отображать состав планетезималей, из которых образовались спутники
+                Юпитера.
+              </p>
+              <p class="text">
+                Пока неизвестно, что вызвало нагрев, необходимый для формирования бороздчатой поверхности Ганимеда. По
+                современным представлениям, такая поверхность — следствие тектонических процессов. Криовулканизм играет,
+                как считается, второстепенную роль, если играет вообще. Силы, создавшие в литосфере Ганимеда сильные
+                напряжения, необходимые для тектонических подвижек, могли быть связаны с приливным разогревом в прошлом,
+                причиной которого, возможно, были нестабильные орбитальные резонансы, через которые проходил спутник.
+                Приливная деформация льдов могла разогреть недра Ганимеда и вызвать напряжения в литосфере, что привело
+                к появлению трещин, горстов и грабенов. При этом на 70 % площади спутника была стёрта старая тёмная
+                поверхность. Формирование бороздчатой поверхности также может быть связано с ранним формированием ядра
+                спутника и последующим приливным разогревом его недр, что, в свою очередь, вызвало увеличение Ганимеда
+                на 1—6 % благодаря тепловому расширению и фазовым переходам во льду. Возможно, в ходе последующей
+                эволюции от ядра к поверхности поднимались плюмы из разогретой воды, вызывая деформации литосферы.
+                Наиболее вероятный современный источник тепла в недрах спутника — радиоактивный разогрев, который может
+                (по крайней мере, частично) обеспечить существование подповерхностного водного океана. Моделирование
+                показывает, что если бы эксцентриситет орбиты Ганимеда был на порядок выше современного (а это,
+                возможно, было в прошлом), приливный разогрев мог быть сильнее радиоактивного.
+              </p>
+              <p class="text">
+                Ударные кратеры есть на участках поверхности обоих типов, но в тёмных областях их особенно много: эти
+                области насыщены кратерами и, судя по всему, их рельеф формировался главным образом именно
+                столкновениями. На ярких бороздчатых участках кратеров намного меньше, и они не сыграли значимой роли в
+                эволюции их рельефа. Плотность кратерирования тёмных участков указывает на возраст в 4 миллиарда лет
+                (как и у материковых областей Луны). Светлые участки младше, но насколько — неясно. Особой интенсивности
+                кратерирование поверхности Ганимеда (как и Луны) достигло около 3,5—4 миллиарда лет назад. Если эти
+                данные точны, то большинство ударных кратеров осталось с той эпохи, и после этого они прибавлялись в
+                числе незначительно. Некоторые кратеры пересечены бороздами, а некоторые образовались поверх борозд. Это
+                говорит о том, что некоторые борозды довольно древние. Местами попадаются относительно молодые кратеры с
+                расходящимися от них лучами выбросов. Кратеры Ганимеда более плоские, чем кратеры на Меркурии или Луне.
+                Вероятно, причиной этого служит непрочность ледяной коры Ганимеда, которая может (или могла)
+                сглаживаться под действием силы тяжести. Древние кратеры, которые почти совсем сглажены (своего рода
+                «призраки» кратеров) известны как палимпсесты; одним из крупнейших палимпсестов Ганимеда является факула
+                Мемфис диаметром 360 км.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+        Дополнительная информация</h2>
+      <center>
+        <hr class="horizontal_line" />
+      </center>
+      <img src="7YVi.gif" height="auto" width="28%" style="border-radius: 10px; float: right; margin-right: 20px;"
+        alt="" title="" />
+      <p class="text">
+        Масса: 1,9*1027 кг (в 318 раз больше массы Земли)<br />
+        Диаметр на полюсе: 133708 км<br />
+        Наклон оси: 3,1°<br />
+        Плотность: 1,33 г/см3<br />
+        Температура верхних слоев: около –160 °C<br />
+        Период обращения вокруг оси (сутки): 9,93 ч<br />
+        Расстояние от Солнца (среднее): 5,203 а. е. или 778 млн. км
+      </p>
+      <button class="btn btn-outline-dark shad toggle" style="width: 100%; margin-top: 15px;" id="nextStep">Читать
+        дальше: планета Сатурн</button>
+      <button class="btn btn-outline-info shad toggle" style="width: 100%; margin-top: 15px; margin-bottom: 5px;"
+        id="backToMain">Вернуться обратно к списку планет</button>
+    </div>
+  </div>
+
+  <footer>
+    <p class="footer-text">All rights reserved 2020- 2021 developed by Igor ©</p>
+  </footer>
+
+  <script>
+    arrowTop.onclick = function () {
+      window.scrollTo(pageXOffset, 0);
+    };
+
+    window.addEventListener('scroll', function () {
+      arrowTop.hidden = (pageYOffset < document.documentElement.clientHeight);
+    });
+
+    const mapIo = document.querySelector('#Io_map');
+
+    mapIo.addEventListener('mouseover', function (event) {
+      event.target.style.width = '100%';
+      event.target.style.height = 'auto';
+    });
+
+    mapIo.addEventListener('mouseout', function (event) {
+      event.target.style.width = '90%';
+      event.target.style.height = 'auto';
+    });
+
+    const mapCallisto = document.querySelector('#Callisto_map');
+
+    mapCallisto.addEventListener('mouseover', function (event) {
+      event.target.style.width = '100%';
+      event.target.style.height = 'auto';
+    });
+
+    mapCallisto.addEventListener('mouseout', function (event) {
+      event.target.style.width = '90%';
+      event.target.style.height = 'auto';
+    });
+
+    const nextStepBtn = document.querySelector('#nextStep'),
+      previousStepBtn = document.querySelector('#backToMain');
+
+    nextStepBtn.addEventListener('click', function (event) {
+      setTimeout(() => location.href = "Saturn.html", 1 * 1200);
+    });
+
+    previousStepBtn.addEventListener('click', function (event) {
+      setTimeout(() => location.href = "Solar_System.html", 1 * 1200);
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -93,6 +93,14 @@ ul > li {
   height: auto;
   width: 770px;
 }
+#Main .main-content #main-photo {
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+}
+#Main .main-content #main-photo:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+}
 #Main .text {
   font-size: 19px;
   text-align: left;
