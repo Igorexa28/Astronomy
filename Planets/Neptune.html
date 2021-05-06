@@ -7,14 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="../Styles/MainStyles.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script>
     $(document).ready(function () {
-      var placeForSmall = $("#navbarDropdown");
+      let placeForSmall = $("#navbarDropdown");
 
-      var smallImage = $("<img />");
+      let smallImage = $("<img />");
 
-      smallImage.attr("src", "Neptunus.gif");
+      smallImage.attr("src", "../Images/Neptunus.gif");
 
       smallImage.css({
         "float": "right",
@@ -27,7 +28,7 @@
 
       smallImage.appendTo(placeForSmall);
 
-      var data = [
+      let data = [
         'Нептун был открыт в 1846 году. Он стал первой планетой, которая была открыта благодаря математическим расчётам, а не путём наблюдений.',
         'При радиусе 24 622 километров, Нептун почти в четыре раза шире Земли.',
         'Среднее расстояние между Нептуном и Солнцем составляет 4,55 миллиардов километров. Это около 30 астрономических единиц (одна астрономическая единица равна среднему расстоянию от Земли до Солнца).',
@@ -40,7 +41,7 @@
         'Тритон, крупнейший спутник Нептуна, имеет атмосферу. Учёные не исключают, что под его ледяной корой может скрываться жидкий океан.'
       ];
 
-      var interHeader = $("<h2></h2>").text("Интересные факты");
+      let interHeader = $("<h2></h2>").text("Интересные факты");
       interHeader.css({
         "text-align": "center",
         "font-size": "24px",
@@ -50,10 +51,10 @@
 
       $(".main-content").append(interHeader);
 
-      var interHorLine = $("<center><hr class='horizontal_line'></center>");
+      let interHorLine = $("<center><hr class='horizontal_line'></center>");
       $(".main-content").append(interHorLine);
 
-      var interList = $("<ul id='myList'></ul>");
+      let interList = $("<ul id='myList'></ul>");
 
       for (let i = 0; i < data.length; i++) {
         let paragraph = $("<p class='text'></p>").text(data[i]);
@@ -64,7 +65,7 @@
 
       interList.appendTo($(".main-content"));
 
-      var addHeader = $("<h2></h2>").text("Дополнительная информация");
+      let addHeader = $("<h2></h2>").text("Дополнительная информация");
       addHeader.css({
         "text-align": "center",
         "font-size": "24px",
@@ -75,8 +76,8 @@
       addHeader.appendTo($(".main-content"));
       interHorLine.appendTo($(".main-content"));
 
-      var image = $("<img />");
-      image.attr("src", "Neptunus.gif");
+      let image = $("<img />");
+      image.attr("src", "../Images/Neptunus.gif");
 
       image.css({
         "float": "right",
@@ -95,27 +96,30 @@
         "<p class='text'>Масса: 1,025*1026 кг (в 17 раз больше Земли)<br/>Диаметр на экваторе: 49528 км (в 3,9 раз больше Земли)<br/>Диаметр на полюсе: 48680 км<br/>Наклон оси: 28,3°<br/>Плотность: 1,64 г/см³<br/>Температура верхних слоев: около – 200 °C<br/></p>"
         );
 
-      var nextBtn = $(
+      let nextBtn = $(
         "<button class='btn btn-outline-dark shad toggle'>Перейти к выполнению тестов на тему Солнечная система</button>"
         );
+
       nextBtn.css({
         "width": "100%",
         "margin-top": "15px"
       });
 
-      var mainBtn = $(
-      "<button class='btn btn-outline-info shad toggle'>Вернуться обратно к списку планет</button>");
+      let mainBtn = $(
+      "<button class='btn btn-outline-info shad toggle'>Вернуться обратно к списку планет</button>"
+      );
+
       mainBtn.css({
         "width": "100%",
         "margin-top": "15px"
       });
 
       nextBtn.click(function () {
-        setTimeout(() => location.href = "Tests.html", 1 * 1200);
+        setTimeout(() => location.href = "Tests.html", 1 * 1500);
       });
 
       mainBtn.click(function () {
-        setTimeout(() => location.href = "Solar_System.html", 1 * 1200);
+        setTimeout(() => location.href = "Solar_System.html", 1 * 1500);
       });
 
       nextBtn.appendTo($(".main-content"));
@@ -126,102 +130,20 @@
   <title>Нептун</title>
 </head>
 
-<body style="background-color:  rgb(248, 248, 248);">
+<body>
   <style>
-    button {
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    ul>li {
-      font-size: 18px;
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    .name_planet {
-      font-family: 'Times New Roman', Times, serif;
-      text-align: center;
-    }
-
-    .horizontal_line {
-      border: 1px solid #333;
-      width: 70%;
-      height: 3px;
-      text-align: center;
-    }
-
-    #Main {
-      display: flex;
-      height: auto;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-      flex-direction: row;
-      justify-content: center;
-      flex-shrink: 1;
-      flex-grow: 1;
-    }
-
-    #arrowTop {
-      height: 9px;
-      width: 14px;
-      color: black;
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      cursor: pointer;
-    }
-
-    #arrowTop::before {
-      content: '▲';
-    }
-
-    .main-content {
-      height: auto;
-      width: 770px;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 25px;
-      margin-bottom: 25px;
-    }
-
-    .shad:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .photo {
-      height: auto;
-      width: 90%;
-      border-radius: 10px;
-      transition: all 1s ease-out;
-    }
-
-    .photo:hover {
-      transform: scale(1.04);
-    }
-
-    .text {
-      color: #333;
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 19px;
-      font-weight: normal;
-      text-align: left;
-      padding-top: 5px;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 5px;
-    }
-
     .footer-text {
-      font-family: 'Times New Roman', Times, serif;
-      font-size: 19px;
+      font-size: 16px;
       text-align: center;
+      font-family: 'Times New Roman', Times, serif;
     }
 
     footer {
-      padding-top: 30px;
-      color: white;
-      height: 80px;
       width: 100%;
+      height: 80px;
+      margin-top: 40px;
+      color: #FFFFFF;
+      padding-top: 30px;
       background-color: #212529;
     }
   </style>
@@ -270,7 +192,7 @@
       <figure>
         <center>
           <p>
-            <img src="depositphotos_36588417-stock-photo-neptune.jpg" class="photo" alt="" title="" />
+            <img src="../Images/depositphotos_36588417-stock-photo-neptune.jpg" class="photo" alt="" title="" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Первое сделанное изображение планеты Нептун «Вояджер-2».</i>
@@ -296,7 +218,7 @@
         Астрономический Союз», принял более точную формулировку определения «планета», и Плутон стал считаться
         «карликовой планетой», а Нептун снова стал последней планетой нашей солнечной системы.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Внутреннее строение</h2>
       <center>
         <hr class="horizontal_line" />
@@ -309,7 +231,7 @@
       <figure>
         <center>
           <p>
-            <img src="Stroenie-Neptuna.jpg" class="photo" alt="" title="" />
+            <img src="../Images/Stroenie-Neptuna.jpg" class="photo" alt="" title="" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Внутренее строение планеты Нептун.</i>
@@ -327,7 +249,7 @@
         полный оборот вокруг Солнца, занимает у Нептуна почти 165 земных лет, поэтому, с момента своего открытия, он
         совершит свой первый полный оборот только в 2011 году.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Атмосфера</h2>
       <center>
         <hr class="horizontal_line" />
@@ -340,7 +262,7 @@
       <figure>
         <center>
           <p>
-            <img src="Neptune_clouds.jpg" class="photo" alt="" title="" />
+            <img src="../Images/Neptune_clouds.jpg" class="photo" alt="" title="" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Детальное изображение атмосферы планеты Нептун, сделанное «Вояджер-2».</i>
@@ -352,7 +274,7 @@
         экваториальных районах метановые облака развивают скорость больше 2000 км/час. С приближениям к полюсам скорость
         падает. Облачная масса движется против направления вращения Нептуна.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Ураганы</h2>
       <center>
         <hr class="horizontal_line" />
@@ -362,7 +284,7 @@
         достигают 5000 км в поперечнике. Они выде ляются на светло-синем фоне овалами тонов, более тёмных. Ураганы тут
         длятся месяцы и даже годы.
       </p>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Большое тёмное пятно</h2>
       <center>
         <hr class="horizontal_line" />
@@ -387,7 +309,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Neptune_darkspot.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Neptune_darkspot.jpg" class="photo" alt="" title="" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Большое тёмное пятно.</i>
@@ -398,7 +320,8 @@
           </div>
         </div>
       </div>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">Кольца
+      <h2>
+        Кольца
       </h2>
       <center>
         <hr class="horizontal_line" />
@@ -422,15 +345,14 @@
               <figure>
                 <center>
                   <p>
-                    <img src="800px-Neptunian_rings_scheme_ru.png" class="photo" alt="" title="" />
+                    <img src="../Images/800px-Neptunian_rings_scheme_ru.png" class="photo" alt="" title="" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Схема спутников и колец Нептуна.</i>
                   </figcaption>
                 </center>
               </figure>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Состав</h2>
               <center>
                 <hr class="horizontal_line" />
@@ -439,8 +361,7 @@
                 Кольца могут состоять из ледяных частиц, покрытых силикатами, или основанным на углероде материалом, —
                 наиболее вероятно, это он придаёт им красноватый оттенок.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Характеристики колец</h2>
               <center>
                 <hr class="horizontal_line" />
@@ -451,13 +372,12 @@
                 000 км. Кольцо Араго расположено на расстоянии в 57 000 км. От внешних границ кольца Леверье до
                 внутренних границ кольца Араго располагается широкое кольцо Ласселла.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Открытие и исследование</h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
-              <img src="Neptune_rings_PIA02224.jpg" height="auto" width="30%"
+              <img src="../Images/Neptune_rings_PIA02224.jpg" height="auto" width="30%"
                 style="float: right; margin-right: 13px; margin-top: 10px; margin-left: 10px; border-radius: 10px;"
                 alt="" title="" />
               <p class="text">
@@ -486,7 +406,7 @@
           </div>
         </div>
       </div>
-      <h2 style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+      <h2>
         Спутники Нептуна</h2>
       <center>
         <hr class="horizontal_line" />
@@ -494,7 +414,7 @@
       <figure>
         <center>
           <p>
-            <img src="2-archivalhubb.jpg" class="photo" alt="" title="" />
+            <img src="../Images/2-archivalhubb.jpg" class="photo" alt="" title="" />
           </p>
           <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
             <i>Схематическое расположение спутников Нептуна.</i>
@@ -519,7 +439,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="274px-Triton_moon_mosaic_Voyager_2_(large).jpg" style="width: 80%" class="photo" alt=""
+                    <img src="../Images/274px-Triton_moon_mosaic_Voyager_2_(large).jpg" style="width: 80%" class="photo" alt=""
                       title="" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
@@ -544,13 +464,12 @@
                 многочисленные криовулканы, извергающие азот. Давление разреженной азотной атмосферы составляет около
                 1/2000 от давления земной атмосферы на уровне моря.
               </p>
-              <h2
-                style="text-align: center; font-size: 24px; color: #333; font-family: 'Times New Roman', Times, serif;">
+              <h2>
                 Поверхность</h2>
               <center>
                 <hr class="horizontal_line" />
               </center>
-              <img src="PIA02208_Triton.jpg" height="auto" width="200px"
+              <img src="../Images/PIA02208_Triton.jpg" height="auto" width="200px"
                 style="float: left; margin-left: 11px; margin-top: 12px; margin-right: 10px; border-radius: 10px;"
                 alt="" title="" />
               <p class="text">
@@ -582,7 +501,7 @@
                 водяной лёд и 10-25 % на сухой лёд. Также поверхность Тритона (в основном в южной полярной шапке)
                 покрыта незначительными количествами замёрзших метана и угарного газа — 0,1 % и 0,05 % соответственно.
               </p>
-              <img src="Triton_(moon).jpg" height="auto" width="200px"
+              <img src="../Images/Triton_(moon).jpg" height="auto" width="200px"
                 style="float: right; margin-left: 6px; margin-top: 12px; margin-right: 12px; border-radius: 10px;"
                 alt="" title="" />
               <p class="text">
@@ -628,7 +547,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Nereid-Voyager2.jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Nereid-Voyager2.jpg" class="photo" alt="" title="" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Снимок «Вояджера-2».</i>
@@ -666,7 +585,7 @@
               <figure>
                 <center>
                   <p>
-                    <img src="Proteus_(Voyager_2).jpg" class="photo" alt="" title="" />
+                    <img src="../Images/Proteus_(Voyager_2).jpg" class="photo" alt="" title="" />
                   </p>
                   <figcaption class="text" style="text-align: center; padding-bottom: 1px;">
                     <i>Снимок «Вояджера-2».</i>
@@ -687,7 +606,7 @@
 
 
   <footer>
-    <p class="footer-text">All rights reserved 2020- 2021 developed by Igor ©</p>
+    <p class="footer-text">All rights reserved 2020 - 2021 developed by Igor ©</p>
   </footer>
 
   <script>
