@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <style>
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .testBlock>button {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #root {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            background-color: rgb(248, 248, 248);
+        }
+
+        .testBlock {
+            margin: 20px;
+            height: 200px;
+            width: 660px;
+            border: 1px solid grey;
+            border-radius: 10px;
+            background-color: rgb(226, 226, 226, 0.4);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .testBlock:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .task {
+            font-size: 21px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 14px;
+            padding-left: 14px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .empty {
+            display: none;
+        }
+    </style>
+    <title>Лёгкий тест</title>
+</head>
+
+<body>
+    <div id="root">
+        <div class="task">
+            <h1>Начальный уровень сложности</h1>
+            <hr />
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                1. На какой планете вы живёте? <br />
+                <input type="radio" name="planet" value="mars" class="form-check-input"> Я живу на планете
+                <b>Марс</b>!<br />
+                <input type="radio" name="planet" value="jupiter" class="form-check-input"> Я живу на планете
+                <b>Юпитер</b>!<br />
+                <input type="radio" name="planet" value="earth" class="form-check-input"> Я живу на планете
+                <b>Земля</b>!<br />
+                <input type="radio" name="planet" value="saturn" class="form-check-input"> Я живу на планете
+                <b>Сатурн</b>!<br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                2. Сколько звёзд находится в солнечной системе? <br />
+                <input type="radio" name="star" value="3" class="form-check-input"> 3 <b>звезды</b><br />
+                <input type="radio" name="star" value="5" class="form-check-input"> 5 <b>звёзд</b><br />
+                <input type="radio" name="star" value="1" class="form-check-input"> 1 <b>звезда</b><br />
+                <input type="radio" name="star" value="2" class="form-check-input"> 2 <b>звезды</b><br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                3. Сколько планет в солнечной системе? <br />
+                <input type="radio" name="numberOfPlanets" value="3" class="form-check-input"> <b>Три</b> планеты <br />
+                <input type="radio" name="numberOfPlanets" value="7" class="form-check-input"> <b>Семь</b> планет <br />
+                <input type="radio" name="numberOfPlanets" value="9" class="form-check-input"> <b>Девять</b> планет<br />
+                <input type="radio" name="numberOfPlanets" value="8" class="form-check-input"> <b>Восемь</b>
+                планет<br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                4. Какая планета славится своими величественными кольцами? <br />
+                <input type="radio" name="planetWithDisc" value="jupiter" class="form-check-input"> Это
+                <b>Юпитер</b><br />
+                <input type="radio" name="planetWithDisc" value="neptune" class="form-check-input"> Нет сомнений, это
+                <b>Нептун</b><br />
+                <input type="radio" name="planetWithDisc" value="venus" class="form-check-input"> По-любому, это
+                <b>Венера</b><br />
+                <input type="radio" name="planetWithDisc" value="saturn" class="form-check-input"> Я уверен, что это
+                <b>Сатурн</b><br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                5. Как называется спутник планеты Земля? <br />
+                <input type="radio" name="sattelite" value="moon" class="form-check-input"> Я думаю, что это <b>Луна</b>
+                <br />
+                <input type="radio" name="sattelite" value="ganimed" class="form-check-input"> Я думаю, что это
+                <b>Ганимед</b> <br />
+                <input type="radio" name="sattelite" value="europe" class="form-check-input"> Я думаю, что это
+                <b>Европа</b> <br />
+                <input type="radio" name="sattelite" value="deimos" class="form-check-input"> Я думаю, что это
+                <b>Деймос</b> <br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                6. Самая далёкая от Солнца планета? <br />
+                <input type="radio" name="theMostDistante" value="uranus" class="form-check-input"> Это <b>Уран</b>
+                <br />
+                <input type="radio" name="theMostDistante" value="pluton" class="form-check-input"> Это <b>Плутон</b>
+                <br />
+                <input type="radio" name="theMostDistante" value="mars" class="form-check-input"> Это <b>Марс</b> <br />
+                <input type="radio" name="theMostDistante" value="neptune" class="form-check-input"> Это <b>Нептун</b>
+                <br />
+            </p>
+            <div style="margin-top: -15px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <center>
+            <button class="btn btn-outline-success" style="width: 660px; margin-top: 10px;" id="getResult">Узнать свой
+                результат
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                </svg>
+            </button> <br />
+            <button class="btn btn-outline-danger" style="width: 660px; margin-top: 15px; margin-bottom: 15px;"
+                id="delAnswers">Сбросить свои
+                ответы
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </button> <br />
+            <button class="btn btn-outline-dark" style="width: 660px; margin-bottom: 50px;" id="backToMain">
+                Вернуться на главную
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                </svg>
+            </button>
+        </center>
+    </div>
+
+    <script>
+        const getResultBtn = document.querySelector('#getResult');
+        const deleteAnswersBtn = document.querySelector('#delAnswers');
+        const answers = ['earth', '1', '8', 'saturn', 'moon', 'neptune'],
+            names = ['planet', 'star', 'numberOfPlanets', 'planetWithDisc', 'sattelite', 'theMostDistante'],
+            result = [];
+        let resultContainer = null;
+        let countOfRight = 0;
+        let divsToChangeRight = [],
+            divsToChangeWrong = [];
+
+        let divs = document.querySelectorAll('.testBlock');
+        let iconBlocks = document.querySelectorAll('.icon');
+
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].setAttribute('id', i);
+        }
+
+        getResultBtn.onclick = function (event) {
+            countOfRight = 0;
+            result.length = 0;
+            for (let i = 0; i < answers.length; i++) {
+                let selectedValue = getSelectedValue(names[i]);
+                result.push(selectedValue);
+            }
+
+            for (let i = 0; i < answers.length; i++) {
+                if (answers[i] === result[i]) {
+                    countOfRight++;
+                    divsToChangeRight.push(i);
+                } else {
+                    divsToChangeWrong.push(i);
+                }
+            }
+
+            let classUse = null,
+                content = null;
+
+            changeColorRight(divsToChangeRight);
+
+            changeColorWrong(divsToChangeWrong);
+
+            addIconRight(divsToChangeRight);
+
+            addIconWrong(divsToChangeWrong);
+
+            if (countOfRight >= 3) {
+                classUse = 'alert alert-success';
+                content =
+                    `Поздравляем вы успешно ответили на <strong>${countOfRight}</strong> из <strong>${answers.length}</strong>!😀😎`;
+                resultContainer = createDiv(classUse, content);
+                resultContainer.style.border = '1px solid green';
+
+                document.querySelector('#getResult').insertAdjacentElement('beforebegin', resultContainer);
+            } else {
+                classUse = 'alert alert-danger';
+                content = `К сожалению, вы не справились с нашим тестом. Попробуйте ещё раз!😟😞`;
+                resultContainer = createDiv(classUse, content);
+                resultContainer.style.border = '1px solid rgb(195, 30, 30)';
+
+                document.querySelector('#getResult').insertAdjacentElement('beforebegin', resultContainer);
+            }
+
+            setTimeout(() => resultContainer.remove(), 3000);
+
+        };
+
+        deleteAnswersBtn.onclick = function (event) {
+            location.reload();
+        };
+
+        backToMain.onclick = function (event) {
+            setTimeout(() => location.href = 'Tests.html', 1200);
+        };
+
+        function changeColorRight(array) {
+            for (let i = 0; i < array.length; i++) {
+                let arrayElement = divs[array[i]];
+                arrayElement.style.backgroundColor = '#d1e7dd';
+                arrayElement.style.border = '1px solid green';
+                arrayElement.style.color = '#0f5132';
+            }
+        }
+
+        function changeColorWrong(array) {
+            for (let i = 0; i < array.length; i++) {
+                let arrayElement = divs[array[i]];
+                arrayElement.style.backgroundColor = '#f8d7da';
+                arrayElement.style.border = '1px solid rgb(195, 30, 30)';
+                arrayElement.style.color = '#842029';
+            }
+        }
+
+        function getSelectedValue(nameOfRadios) {
+            const radios = document.getElementsByName(nameOfRadios);
+            let selectedValue = null;
+
+            for (let i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    selectedValue = radios[i].value;
+                }
+            }
+
+            if (selectedValue) {
+                return selectedValue;
+            } else {
+                selectedValue = null;
+
+                return selectedValue;
+            }
+        }
+
+        function getRandomInt(min = 0, max = 3) {
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function createDiv(classToUse, content) {
+            let div = document.createElement('div');
+            div.className = classToUse;
+            div.innerHTML = content;
+
+            return div;
+        }
+
+        function addIconRight(array) {
+            for (let index = 0; index < array.length; index++) {
+                let arrayElement = iconBlocks[array[index]];
+                arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                    <path
+                        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>`;
+            }
+        }
+
+        function addIconWrong(array) {
+            for (let index = 0; index < array.length; index++) {
+                let arrayElement = iconBlocks[array[index]];
+                arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>`;
+            }
+        }
+    </script>
+</body>
+
+</html>
