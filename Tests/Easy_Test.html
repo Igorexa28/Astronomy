@@ -18,23 +18,23 @@
         }
 
         #root {
+            width: 100%;
+            height: auto;
             display: flex;
+            align-items: center;
             flex-flow: column wrap;
             justify-content: center;
-            align-items: center;
-            height: auto;
-            width: 100%;
             background-color: rgb(248, 248, 248);
         }
 
         .testBlock {
             margin: 20px;
-            height: 200px;
             width: 660px;
-            border: 1px solid grey;
+            height: 200px;
             border-radius: 10px;
-            background-color: rgb(226, 226, 226, 0.4);
+            border: 1px solid grey;
             transition: box-shadow 0.5s ease;
+            background-color: rgb(226, 226, 226, 0.4);
         }
 
         .testBlock:hover {
@@ -43,9 +43,8 @@
 
         .task {
             font-size: 21px;
+            padding: 14px 0px 0px 14px;
             font-family: 'Times New Roman', Times, serif;
-            padding-top: 14px;
-            padding-left: 14px;
         }
 
         button:hover {
@@ -175,12 +174,12 @@
     <script>
         const getResultBtn = document.querySelector('#getResult');
         const deleteAnswersBtn = document.querySelector('#delAnswers');
+        
         const answers = ['earth', '1', '8', 'saturn', 'moon', 'neptune'],
             names = ['planet', 'star', 'numberOfPlanets', 'planetWithDisc', 'sattelite', 'theMostDistante'],
             result = [];
-        let resultContainer = null;
-        let countOfRight = 0;
-        let divsToChangeRight = [],
+        let resultContainer = null, countOfRight = 0;
+        const divsToChangeRight = [],
             divsToChangeWrong = [];
 
         let divs = document.querySelectorAll('.testBlock');
