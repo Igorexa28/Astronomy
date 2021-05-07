@@ -12,6 +12,10 @@ button {
   font-family: "Times New Roman", Times, serif;
 }
 
+a {
+  font-family: "Times New Roman", Times, serif;
+}
+
 h2 {
   font-size: 24px;
   color: #333;
@@ -35,6 +39,10 @@ h2 {
 
 ul > li {
   font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+li input {
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -71,6 +79,30 @@ ul > li {
 .photo:hover {
   -webkit-transform: scale(1.04);
           transform: scale(1.04);
+}
+
+.block {
+  font-size: 16px;
+  margin: 25px 0px;
+  border-radius: 10px;
+  font-family: "Times New Roman", Times, serif;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  background-color: #f8f9fa;
+  height: 430px;
+  width: 400px;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.block:hover {
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+.block img {
+  border-radius: 8px;
+}
+.block .card-body .card-title {
+  font-size: 21px;
 }
 
 #Main {

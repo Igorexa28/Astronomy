@@ -7,84 +7,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="../Styles/MainStyles.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <title>Солнечная система</title>
 </head>
 
-<body style="background-color: rgb(248, 248, 248);">
+<body>
     <style>
-        button {
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        a {
-            font-family: 'Times New Roman', Times, serif;
-        }
-
         .main-content {
-            height: auto;
             width: 100%;
-            margin-top: 25px;
-            margin-bottom: 25px;
-            margin-right: auto;
-            margin-left: auto;
+            height: auto;
             display: flex;
-            background-color: rgb(248, 248, 248);
-            flex-direction: row;
+            margin: 25px auto; 
+            flex-flow: row wrap;
             justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .block {
-            margin-top: 25px;
-            margin-bottom: 25px;
-            height: 430px;
-            width: 400px;
-            border-radius: 10px;
-            background-color: #f8f9fa;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .block:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-        }
-
-        .photo {
-            border-radius: 8px;
+            background-color: rgb(248, 248, 248);
         }
 
         .footer-text {
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 19px;
+            font-size: 16px;
             text-align: center;
-        }
-
-        ul>li {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 18px;
-        }
-
-        li input {
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        .shad:hover {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
         footer {
-            padding-top: 30px;
-            color: white;
-            height: 80px;
             width: 100%;
+            height: 80px;
+            color: #FFFFFF;
+            padding-top: 30px;
             background-color: #212529;
         }
     </style>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
         <div class="container-fluid">
-            <a class="navbar-brand"
-                href="https://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%BB%D0%BD%D0%B5%D1%87%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-                style="text-decoration: none;">Солнечная система</a>
+            <a class="navbar-brand" style="text-decoration: none; font-size: 22px;">Солнечная система</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -105,13 +61,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item">Солнечная система</a></li>
-                            <li><a class="dropdown-item" href="Neutron_Stars.html">Нейтроные звёзды</a></li>
-                            <li><a class="dropdown-item" href="Black_Holes.html">Чёрные дыры</a></li>
-                            <li><a class="dropdown-item" href="">Квазары</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Находится в разработке</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -160,7 +109,7 @@
 
     <div class="main-content">
         <div class="block first-block card border border-dark" id="mercury">
-            <img src="mercuriy.jpg" class="card-img-top photo" alt="Изображение планеты Меркурий" title="Меркурий">
+            <img src="../Images/mercuriy.jpg" class="card-img-top" alt="Изображение планеты Меркурий" title="Меркурий">
             <div class="card-body">
                 <h5 class="card-title">Меркурий</h5>
                 <p class="card-text">Ближе всех к Солнцу располагается планета Меркурий. Это самая маленькая, не имеющая
@@ -169,27 +118,27 @@
             </div>
         </div>
         <div class="block second-block card border border-dark" id="venus">
-            <img src="venera.jpg" class="card-img-top photo" alt="Изображение планеты Венера" title="Венера">
+            <img src="../Images/venera.jpg" class="card-img-top" alt="Изображение планеты Венера" title="Венера">
             <div class="card-body">
                 <h5 class="card-title">Венера</h5>
                 <p class="card-text">Вторая от Солнца – планета Венера, является наиболее приближенной к Земле и,
-                    пожалуй, самой красивой из планет земной группы. Она тысячелетиями приковывала к себе любопытн...
+                    пожалуй, самой красивой из планет земной группы. Она тысячелетиями приковывала к себе любопытные...
                 </p>
                 <a href="Venus.html" class="btn btn-dark shad" style="width: 100%;">Подробнее</a>
             </div>
         </div>
         <div class="block third-block card border border-dark" id="earth">
-            <img src="zemlya.jpg" class="card-img-top photo" alt="Изображение планеты Земля" title="Земля">
+            <img src="../Images/zemlya.jpg" class="card-img-top" alt="Изображение планеты Земля" title="Земля">
             <div class="card-body">
                 <h5 class="card-title">Земля</h5>
                 <p class="card-text">Наша планета – Земля – имеет множество имен: голубая планета, Терра (лат.), третья
-                    планета, Earth (анг.). Она вращается вокруг Солнца по круговой орбите,радиусом около 1 астрономич...
+                    планета, Earth (анг.). Она вращается вокруг Солнца по круговой орбите,радиусом около 1 астрономической...
                 </p>
                 <a href="Earth.html" class="btn btn-dark shad" style="width: 100%;">Подробнее</a>
             </div>
         </div>
         <div class="block fourth-block card border border-dark" id="mars">
-            <img src="mars.jpg" class="card-img-top photo" alt="Изображение планеты Марс" title="Марс">
+            <img src="../Images/mars.jpg" class="card-img-top" alt="Изображение планеты Марс" title="Марс">
             <div class="card-body">
                 <h5 class="card-title">Марс</h5>
                 <p class="card-text">Красная планета – Марс – названа так, в честь одноименного древнеримского бога
@@ -198,7 +147,7 @@
             </div>
         </div>
         <div class="block fifth-block card border border-dark" id="jupiter">
-            <img src="jupiter.jpg" class="card-img-top photo" alt="Изображение планеты Юпитер" title="Юпитер">
+            <img src="../Images/jupiter.jpg" class="card-img-top" alt="Изображение планеты Юпитер" title="Юпитер">
             <div class="card-body">
                 <h5 class="card-title">Юпитер</h5>
                 <p class="card-text">Пятой и самой большой планетой в солнечной системе, известной с древнейших времен,
@@ -207,7 +156,7 @@
             </div>
         </div>
         <div class="block sixth-block card border border-dark" id="saturn">
-            <img src="saturn.jpg" class="card-img-top photo" alt="Изображение планеты Сатурн" title="Сатурн">
+            <img src="../Images/saturn.jpg" class="card-img-top" alt="Изображение планеты Сатурн" title="Сатурн">
             <div class="card-body">
                 <h5 class="card-title">Сатурн</h5>
                 <p class="card-text">Известный с древних времен – Сатурн – является шестой планетой нашей солнечной
@@ -216,28 +165,28 @@
             </div>
         </div>
         <div class="block seventh-block card border border-dark" id="uranus">
-            <img src="ur anus.jpg" class="card-img-top photo" alt="Изображение планеты Уран" title="Уран">
+            <img src="../Images/ur anus.jpg" class="card-img-top" alt="Изображение планеты Уран" title="Уран">
             <div class="card-body">
                 <h5 class="card-title">Уран</h5>
                 <p class="card-text">Седьмую планету солнечной системы – Уран – открыли лишь в 1781 году и назвали в
-                    честь древнегреческого бога, который был отцом Кроноса. Эту планету классифицируют, как...</p>
+                    честь древнегреческого бога, который был отцом Кроноса. Эту планету классифицируют, как одну из...</p>
                 <a href="Uranus.html" class="btn btn-dark shad" style="width: 100%;">Подробнее</a>
             </div>
         </div>
         <div class="block eigth-block card border border-dark" id="neptune">
-            <img src="neptun.jpg" class="card-img-top photo" alt="Изображение планеты Нептун" title="Нептун">
+            <img src="../Images/neptun.jpg" class="card-img-top" alt="Изображение планеты Нептун" title="Нептун">
             <div class="card-body">
                 <h5 class="card-title">Нептун</h5>
                 <p class="card-text">Вторая планета (после Урана), открытая в «Новое время» – Нептун – является
                     четвертой по размеру и восьмой по расстоянию планетой от Солнца. Его назвали в честь римского
-                    морского...</p>
+                    морского бога.</p>
                 <a href="Neptune.html" class="btn btn-dark shad" style="width: 100%;">Подробнее</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p class="footer-text">All rights reserved &#169</p>
+        <p class="footer-text">All rights reserved 2020 - 2021 developed by Igor ©</p>
     </footer>
 
     <script>
