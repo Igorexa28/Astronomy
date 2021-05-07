@@ -189,41 +189,35 @@
         <p class="footer-text">All rights reserved 2020 - 2021 developed by Igor ©</p>
     </footer>
 
-    <script>
-        const planetMercury = document.getElementById("mercury"),
-            planetVenus = document.getElementById("venus");
-        const planetEarth = document.getElementById("earth"),
-            planetMars = document.getElementById("mars");
-        const planetJupiter = document.getElementById("jupiter"),
-            planetSaturn = document.getElementById("saturn");
-        const planetUranus = document.getElementById("uranus"),
-            planetNeptune = document.getElementById("neptune");
+    <script async type="module">
+        import { temperatureOnPlanets, distancesFromSun, dayLong } from '../Scripts/script.js';
+        import { densitiesOfPlanets, diametreOfPlanets, massesOfPlanets } from '../Scripts/script.js';
+        import { attributeNames } from '../Scripts/script.js';
+        
+        const planetMercury = document.querySelector("#mercury"),
+            planetVenus = document.querySelector("#venus");
+        const planetEarth = document.querySelector("#earth"),
+            planetMars = document.querySelector("#mars");
+        const planetJupiter = document.querySelector("#jupiter"),
+            planetSaturn = document.querySelector("#saturn");
+        const planetUranus = document.querySelector("#uranus"),
+            planetNeptune = document.querySelector("#neptune");
 
-        const planets = [planetMercury, planetVenus, planetEarth, planetMars, planetJupiter, planetSaturn, planetUranus,
-            planetNeptune
+        const planets = [planetMercury, planetVenus, planetEarth, planetMars, planetJupiter, 
+            planetSaturn, planetUranus, planetNeptune
         ];
-        const attributeNames = ["data-temperature", "data-distance", "data-day", "data-density", "data-diameter",
-            "data-mass"
-        ];
-        const temperatures = [167, 464, 15, -65, -110, -140, -195, -200];
-        const distances = [1, 2, 3, 4, 5, 6, 7, 8];
-        const dayLong = [1392, 5832, 24, 25, 9, 10, 17, 16];
-        const densities = [5.42, 5.25, 5.515, 3.94, 1.33, 0.69, 1.29, 1.64];
-        const diametres = [4879, 12103, 12742, 6780, 139822, 116464, 50724, 49244];
-        const masses = [330, 4868, 5973, 641, 1898600, 568460, 86832, 102430];
 
-        addAttributes(planets, attributeNames[0], temperatures);
-        addAttributes(planets, attributeNames[1], distances);
+        addAttributes(planets, attributeNames[0], temperatureOnPlanets);
+        addAttributes(planets, attributeNames[1], distancesFromSun);
         addAttributes(planets, attributeNames[2], dayLong);
-        addAttributes(planets, attributeNames[3], densities);
-        addAttributes(planets, attributeNames[4], diametres);
-        addAttributes(planets, attributeNames[5], masses);
+        addAttributes(planets, attributeNames[3], densitiesOfPlanets);
+        addAttributes(planets, attributeNames[4], diametreOfPlanets);
+        addAttributes(planets, attributeNames[5], massesOfPlanets);
 
         document.querySelector("#sort").addEventListener("click", function () {
-            let allPosiibleInputs = document.querySelectorAll("input[name='type-sort']");
-            let whatIsTheType = document.querySelectorAll("input[name='order-sort']");
-            let input_value = "distanceSun",
-                type_value = "ascending";
+            let allPosiibleInputs = document.querySelectorAll("input[name='type-sort']"),
+                whatIsTheType = document.querySelectorAll("input[name='order-sort']"), 
+                input_value = "distanceSun",type_value = "ascending";
 
             for (let i = 0; i < allPosiibleInputs.length; i++) {
                 if (allPosiibleInputs[i].checked) {
