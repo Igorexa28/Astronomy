@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Средний тест</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let successBtn = $(
+                    `<button class="btn btn-outline-success" style="width: 660px; margin-top: 70px;"></button>`)
+                .html(`Узнать свой результат <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                </svg>`);
+            successBtn.attr('id', 'getResult');
+            let deleteBtn = $(
+                `<button class="btn btn-outline-danger" style="width: 660px; margin-top: 15px; margin-bottom: 15px;"></button>`
+            ).html(`Сбросить свои ответы <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>`);
+            deleteBtn.attr('id', 'delAnswers');
+            let backToMain = $(
+                    `<button class="btn btn-outline-dark" style="width: 660px; margin-bottom: 50px;"></button>`)
+                .html(`Вернуться на главную <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                </svg>`);
+            backToMain.attr('id', 'backToMain');
+
+            let arrayBtns = [successBtn, deleteBtn, backToMain];
+            let reversedBtns = arrayBtns.reverse();
+
+            let lastBlock = $('.testBlock').last(),
+                firstBlock = $('.testBlock').first();
+
+            for (let index = 0; index < reversedBtns.length; index++) {
+                reversedBtns[index].insertAfter(lastBlock);
+            }
+
+            const taskBlocks = document.querySelectorAll('.testBlock');
+            const iconBlocks = document.querySelectorAll('.icon');
+
+            const answers = ['saturn', 'mars', 'jupiter', 'venus', 'jupiter', 'venus', 'all', 'titan'],
+                result = [];
+            let countOfRight = 0,
+                messageBox = null;
+
+            successBtn.on("click", function (event) {
+                result.length = 0;
+                let inputNames = ['theBiggestSattelite', 'theBiggestMountain', 'theBiggestPlanet',
+                    'theBrightestPlanet',
+                    'redSpot', 'highTemperature', 'hasRings', 'hasAtmosphere'
+                ];
+
+                for (let i = 0; i < answers.length; i++) {
+                    let selectedValue = getSelectedValue(inputNames[i]);
+                    result.push(selectedValue);
+                }
+
+                countOfRight = countRight(answers, result);
+
+                const [rightBlocks, wrongBlocks] = countRightAndWrong(answers, result);
+
+                changeColorRight(rightBlocks);
+
+                changeColorWrong(wrongBlocks);
+
+                addIconRight(rightBlocks);
+
+                addIconWrong(wrongBlocks);
+
+                messageBox = createAlertBox(countOfRight);
+
+                lastBlock.append(messageBox);
+
+                setTimeout(() => messageBox.remove(), 3000);
+            });
+
+            deleteBtn.on("click", function (event) {
+                location.reload();
+            });
+
+            backToMain.on("click", function (event) {
+                location.href = "Solar_System.html";
+            });
+
+            function createAlertBox(countRightAnswers) {
+                let div = document.createElement('div');
+                div.style.marginTop = '25px';
+
+                if (countRightAnswers >= 4) {
+                    div.className = 'alert alert-success';
+                    div.innerHTML =
+                        `Поздравляем вы успешно ответили на <strong>${countOfRight}</strong> из <strong>${answers.length}</strong> вопросов!😀😎`;
+                } else {
+                    div.className = 'alert alert-danger';
+                    div.innerHTML = `К сожалению, вы не справились с нашим тестом. Попробуйте ещё раз!😟😞`;
+                }
+
+                return div;
+            }
+
+            function countRight(firstArray, secondArray) {
+                let count = 0;
+                for (let index = 0; index < firstArray.length; index++) {
+                    if (firstArray[index] === secondArray[index]) {
+                        count++;
+                    } else {
+                        continue;
+                    }
+                }
+
+                return count;
+            }
+
+            function countRightAndWrong(firstArray, secondArray) {
+                let rightBlocks = [],
+                    wrongBlocks = [];
+
+                for (let index = 0; index < firstArray.length; index++) {
+                    if (firstArray[index] === secondArray[index]) {
+                        let idOfRight = index;
+                        rightBlocks.push(idOfRight);
+                    } else {
+                        let idOfWrong = index;
+                        wrongBlocks.push(idOfWrong);
+                    }
+                }
+
+                return [rightBlocks, wrongBlocks];
+            }
+
+            function getSelectedValue(nameInput) {
+                let inputs = document.getElementsByName(nameInput);
+                let selectedValue = null;
+
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked) {
+                        selectedValue = inputs[i].value;
+                    }
+                }
+
+                if (selectedValue) {
+                    return selectedValue;
+                } else {
+                    selectedValue = null;
+
+                    return selectedValue;
+                }
+            }
+
+            function changeColorRight(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = taskBlocks[array[index]];
+                    arrayElement.style.backgroundColor = '#d1e7dd';
+                    arrayElement.style.border = '1px solid green';
+                    arrayElement.style.color = '#0f5132';
+                }
+            }
+
+            function changeColorWrong(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = taskBlocks[array[index]];
+                    arrayElement.style.backgroundColor = '#f8d7da';
+                    arrayElement.style.border = '1px solid rgb(195, 30, 30)';
+                    arrayElement.style.color = '#842029';
+                }
+            }
+
+            function addIconRight(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = iconBlocks[array[index]];
+                    arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                    <path
+                        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>`;
+                }
+            }
+
+            function addIconWrong(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = iconBlocks[array[index]];
+                    arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>`;
+                }
+            }
+        });
+    </script>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .testBlock>button {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #root {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            background-color: rgb(248, 248, 248);
+        }
+
+        .testBlock {
+            margin: 20px;
+            height: 220px;
+            width: 660px;
+            border: 1px solid grey;
+            border-radius: 10px;
+            background-color: rgb(226, 226, 226, 0.4);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .testBlock:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .task {
+            font-size: 21px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 14px;
+            padding-left: 14px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="task" id="header">
+            <h1>Средний уровень сложности</h1>
+            <hr />
+        </div>
+        <div class="testBlock" style="height: 240px;">
+            <p class="task">
+                1. Какой планете принадлежит самый большой спутник в солнечной системе? <br />
+                <input type="radio" name="theBiggestSattelite" value="saturn" class="form-check-input"> Я думаю, что это
+                <b>Сатурн</b> <br />
+                <input type="radio" name="theBiggestSattelite" value="jupiter" class="form-check-input"> Я думаю, что
+                это
+                <b>Юпитер</b> <br />
+                <input type="radio" name="theBiggestSattelite" value="earth" class="form-check-input"> Я предпологаю,
+                что
+                это <b>Земля</b> <br />
+                <input type="radio" name="theBiggestSattelite" value="neptune" class="form-check-input"> Скорее всего,
+                это
+                <b>Нептун</b> <br />
+            </p>
+            <div style="margin-top: -10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock" style="height: 240px;">
+            <p class="task">
+                2. На какой планете находится самая высокая гора в солнечной системе? <br />
+                <input type="radio" name="theBiggestMountain" value="uran" class="form-check-input"> Это
+                <b>Уран</b> <br />
+                <input type="radio" name="theBiggestMountain" value="jupiter" class="form-check-input"> Это
+                <b>Юпитер</b> <br />
+                <input type="radio" name="theBiggestMountain" value="earth" class="form-check-input"> Это
+                <b>Земля</b> <br />
+                <input type="radio" name="theBiggestMountain" value="mars" class="form-check-input"> Это
+                <b>Марс</b> <br />
+            </p>
+            <div style="margin-top: -10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task" oncopy="return false;">
+                3. Какая планета является самой большой в Солнечной системе? <br />
+                <input type="radio" name="theBiggestPlanet" value="earth" class="form-check-input"> Я думаю, что
+                это <b>Земля</b> <br />
+                <input type="radio" name="theBiggestPlanet" value="saturn" class="form-check-input"> Скорее всего,
+                это <b>Сатурн</b> <br />
+                <input type="radio" name="theBiggestPlanet" value="jupiter" class="form-check-input"> Я уверен,
+                что это <b>Юпитер</b> <br />
+                <input type="radio" name="theBiggestPlanet" value="uran" class="form-check-input"> Нет сомнений,
+                это <b>Уран</b> <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                4. Какая планета занимает второе место по яркости на ночном небе? <br />
+                <input type="radio" name="theBrightestPlanet" value="mars" class="form-check-input"> По-любому, это
+                <b>Марс</b> <br />
+                <input type="radio" name="theBrightestPlanet" value="jupiter" class="form-check-input"> Нет сомнений,
+                это
+                <b>Юпитер</b> <br />
+                <input type="radio" name="theBrightestPlanet" value="venus" class="form-check-input"> Я думаю, что это
+                <b>Венера</b> <br />
+                <input type="radio" name="theBrightestPlanet" value="mercury" class="form-check-input"> Я уверен, что
+                это
+                <b>Меркурий</b> <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                5. Какая планета славится большим красным пятном? <br />
+                <input type="radio" name="redSpot" value="mars" class="form-check-input"> Скорее всего, это
+                <b>Марс</b> <br />
+                <input type="radio" name="redSpot" value="venus" class="form-check-input"> Я думаю, что это
+                <b>Венера</b> <br />
+                <input type="radio" name="redSpot" value="jupiter" class="form-check-input"> Я уверен, что это
+                <b>Юпитер</b> <br />
+                <input type="radio" name="redSpot" value="neptune" class="form-check-input"> Наверное, это
+                <b>Нептун</b> <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                6. На какой планете самая высокая температура? <br />
+                <input type="radio" name="highTemperature" value="mars" class="form-check-input"> Это же легко,
+                <b>Марс</b> <br />
+                <input type="radio" name="highTemperature" value="mercury" class="form-check-input"> Слишком
+                просто, это <b>Меркурий</b> <br />
+                <input type="radio" name="highTemperature" value="saturn" class="form-check-input"> Нет сомнений,
+                это <b>Сатурн</b> <br />
+                <input type="radio" name="highTemperature" value="venus" class="form-check-input"> Наверное, это
+                <b>Венера</b> <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                7. Есть ли кольца у Юпитера, Нептуна и Урана кольца? <br />
+                <input type="radio" name="hasRings" value="nobody" class="form-check-input"> <b>Нет</b>, ни у кого
+                нет колец <br />
+                <input type="radio" name="hasRings" value="jupiter_neptune" class="form-check-input"> <b>Да</b>,
+                кольца есть у Юпитера и Непутна <br />
+                <input type="radio" name="hasRings" value="neptune_uran" class="form-check-input"> <b>Да</b>,
+                кольца есть у Нептуна и Урана <br />
+                <input type="radio" name="hasRings" value="all" class="form-check-input"> <b>Да</b>, кольца есть у
+                всех <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                8. Какой спутник обладает своей собственной атмосферой? <br />
+                <input type="radio" name="hasAtmosphere" value="titan" class="form-check-input"> По-любому, это
+                <b>Титан</b> <br />
+                <input type="radio" name="hasAtmosphere" value="ganimed" class="form-check-input"> Я думаю, что это
+                <b>Ганимед</b> <br />
+                <input type="radio" name="hasAtmosphere" value="moon" class="form-check-input"> Я верен, что это
+                <b>Луна</b> <br />
+                <input type="radio" name="hasAtmosphere" value="reia" class="form-check-input"> Скорее всего, это
+                <b>Рея</b> <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+    </div>
+    <script>
+        let testBlocks = document.querySelectorAll('.testBlock');
+
+        addAttribute(testBlocks);
+
+        function addAttribute(array) {
+            for (let index = 0; index < array.length; index++) {
+                array[index].setAttribute('id', index);
+                array[index].setAttribute('tabIndex', 1);
+            }
+        }
+    </script>
+</body>
+
+</html>
