@@ -1,0 +1,62 @@
+$fontFamily: 'Times New Roman', Times, serif;
+$backgroundColor: rgb(248, 248, 248);
+
+@mixin sizeOfBlock($height: 100px, $width: 300px) {
+    height: $height;
+    width: $width;
+}
+
+@mixin flexContainer($flexDir: row, $flexWrap: wrap, $justifyCont: center, $alItems: center) {
+    display: flex;
+    flex-wrap: $flexWrap;
+    align-items: $alItems;
+    flex-direction: $flexDir;
+    justify-content: $justifyCont;
+}
+
+* {
+    font-family: $fontFamily;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    font-family: $fontFamily;
+}
+
+#root {
+    @include sizeOfBlock(auto, 100%);
+    background-color: $backgroundColor;
+    @include flexContainer(column, wrap, center, center);
+
+    .testBlock {
+        margin: 20px;
+        border-radius: 10px;
+        border: 1px solid grey;
+        transition: box-shadow 0.5s ease;
+        @include sizeOfBlock(220px, 660px);
+        background-color: rgb(226, 226, 226, 0.4);
+    
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+    
+        &>button {
+            font-family: $fontFamily;
+        }
+    
+        .task {
+            font-size: 21px;
+            font-family: $fontFamily;
+            padding: 14px 0px 0px 14px;
+        }
+    }
+}
+
+button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.empty {
+    display: none;
+}
