@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>Сложный тест</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let successBtn = $(
+                    `<button class="btn btn-outline-success" style="width: 660px; margin-top: 70px;"></button>`)
+                .html(`Узнать свой результат <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-check-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                </svg>`);
+            successBtn.attr('id', 'getResult');
+            let deleteBtn = $(
+                `<button class="btn btn-outline-danger" style="width: 660px; margin-top: 15px; margin-bottom: 15px;"></button>`
+                ).html(`Сбросить свои ответы <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>`);
+            deleteBtn.attr('id', 'delAnswers');
+            let backToMain = $(
+                    `<button class="btn btn-outline-dark" style="width: 660px; margin-bottom: 50px;"></button>`)
+                .html(`Вернуться на главную <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+                </svg>`);
+            backToMain.attr('id', 'backToMain');
+
+
+            let arrayBtns = [successBtn, deleteBtn, backToMain];
+            let reversedBtns = arrayBtns.reverse();
+
+            let lastBlock = $('.testBlock').last(),
+                firstBlock = $('.testBlock').first();
+
+            for (let index = 0; index < reversedBtns.length; index++) {
+                reversedBtns[index].insertAfter(lastBlock);
+            }
+
+            const taskBlocks = document.querySelectorAll('.testBlock');
+            const iconBlocks = document.querySelectorAll('.icon');
+
+            const answers = ['1930', '1957', 'antares', '1966', '2', 'gauss', 'mercury', 'polarna', '1961',
+                    '1977'
+                ],
+                result = [];
+            let countOfRight = 0,
+                messageBox = null;
+
+            successBtn.on("click", function (event) {
+                result.length = 0;
+                let inputNames = ['questionPluto', 'firstSattelite', 'doubleStar', 'firstApproch',
+                    'hubbleLaw', 'creator', 'theFastest', 'unmovable', 'firstMan', 'voyager_1'
+                ];
+
+                for (let i = 0; i < answers.length; i++) {
+                    let selectedValue = getSelectedValue(inputNames[i]);
+                    result.push(selectedValue);
+                }
+
+                countOfRight = countRight(answers, result);
+
+                const [rightBlocks, wrongBlocks] = countRightAndWrong(answers, result);
+
+                changeColorRight(rightBlocks);
+
+                changeColorWrong(wrongBlocks);
+
+                addIconRight(rightBlocks);
+
+                addIconWrong(wrongBlocks);
+
+                messageBox = createAlertBox(countOfRight);
+
+                lastBlock.append(messageBox);
+
+                setTimeout(() => messageBox.remove(), 3000);
+            });
+
+            deleteBtn.on("click", function (event) {
+                location.reload();
+            });
+
+            backToMain.on("click", function (event) {
+                location.href = "Solar_System.html";
+            });
+
+            function addIconRight(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = iconBlocks[array[index]];
+                    arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                    <path
+                        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg>`;
+                }
+            }
+
+            function addIconWrong(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = iconBlocks[array[index]];
+                    arrayElement.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                    </svg>`;
+                }
+            }
+
+            function createAlertBox(countRightAnswers) {
+                let div = document.createElement('div');
+                div.style.marginTop = '23px';
+
+                if (countRightAnswers >= 6) {
+                    div.className = 'alert alert-success';
+                    div.innerHTML =
+                        `Поздравляем вы успешно ответили на <strong>${countOfRight}</strong> из <strong>${answers.length}</strong> вопросов!😀😎`;
+                } else {
+                    div.className = 'alert alert-danger';
+                    div.innerHTML = `К сожалению, вы не справились с нашим тестом. Попробуйте ещё раз!😟😞`;
+                }
+
+                return div;
+            }
+
+            function countRight(firstArray, secondArray) {
+                let count = 0;
+                for (let index = 0; index < firstArray.length; index++) {
+                    if (firstArray[index] === secondArray[index]) {
+                        count++;
+                    } else {
+                        continue;
+                    }
+                }
+
+                return count;
+            }
+
+            function countRightAndWrong(firstArray, secondArray) {
+                let rightBlocks = [],
+                    wrongBlocks = [];
+
+                for (let index = 0; index < firstArray.length; index++) {
+                    if (firstArray[index] === secondArray[index]) {
+                        let idOfRight = index;
+                        rightBlocks.push(idOfRight);
+                    } else {
+                        let idOfWrong = index;
+                        wrongBlocks.push(idOfWrong);
+                    }
+                }
+
+                return [rightBlocks, wrongBlocks];
+            }
+
+            function getSelectedValue(nameInput) {
+                let inputs = document.getElementsByName(nameInput);
+                let selectedValue = null;
+
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].checked) {
+                        selectedValue = inputs[i].value;
+                    }
+                }
+
+                if (selectedValue) {
+                    return selectedValue;
+                } else {
+                    selectedValue = null;
+
+                    return selectedValue;
+                }
+            }
+
+            function changeColorRight(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = taskBlocks[array[index]];
+                    arrayElement.style.backgroundColor = '#d1e7dd';
+                    arrayElement.style.border = '1px solid green';
+                    arrayElement.style.color = '#0f5132';
+                }
+            }
+
+            function changeColorWrong(array) {
+                for (let index = 0; index < array.length; index++) {
+                    let arrayElement = taskBlocks[array[index]];
+                    arrayElement.style.backgroundColor = '#f8d7da';
+                    arrayElement.style.border = '1px solid rgb(195, 30, 30)';
+                    arrayElement.style.color = '#842029';
+                }
+            }
+        });
+    </script>
+    <style>
+        * {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .testBlock>button {
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        #root {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+            background-color: rgb(248, 248, 248);
+        }
+
+        .testBlock {
+            margin: 20px;
+            height: 220px;
+            width: 660px;
+            border: 1px solid grey;
+            border-radius: 10px;
+            background-color: rgb(226, 226, 226, 0.4);
+            transition: box-shadow 0.5s ease;
+        }
+
+        .testBlock:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .task {
+            font-size: 21px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-top: 14px;
+            padding-left: 14px;
+        }
+
+        button:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .empty {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+        <div class="task">
+            <h1>Сложный уровень сложности</h1>
+            <hr />
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                1. Когда и кем была открыта карликовая планета Плутон? <br />
+                <input type="radio" name="questionPluto" value="1930" class="form-check-input"> В <b>1930</b> году
+                <b>Клайдом Томбо</b> <br />
+                <input type="radio" name="questionPluto" value="1781" class="form-check-input"> В <b>1781</b> году
+                <b>Уильямом Гершелем</b> <br />
+                <input type="radio" name="questionPluto" value="1877" class="form-check-input"> В <b>1877</b> году
+                <b>Карлом Гауссом</b> <br />
+            </p>
+            <div style="margin-top: 50px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                2. Запуск в СССР первого в мире космического спутника состоялся: <br />
+                <input type="radio" name="firstSattelite" value="1961" class="form-check-input"> В 1961г. <br />
+                <input type="radio" name="firstSattelite" value="1975" class="form-check-input"> В 1975г. <br />
+                <input type="radio" name="firstSattelite" value="1957" class="form-check-input"> В 1957г. <br />
+            </p>
+            <div style="margin-top: 50px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                3. Двойная звезда в созвездии Скорпиона носит название: <br />
+                <input type="radio" name="doubleStar" value="kanopus" class="form-check-input"> Канопус <br />
+                <input type="radio" name="doubleStar" value="antares" class="form-check-input"> Антарес <br />
+                <input type="radio" name="doubleStar" value="procion" class="form-check-input"> Процион <br />
+            </p>
+            <div style="margin-top: 50px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                4. В каком году была осуществлена первая мягкая посадка на поверхность Луны: <br />
+                <input type="radio" name="firstApproch" value="1961" class="form-check-input"> В 1961г. <br />
+                <input type="radio" name="firstApproch" value="1966" class="form-check-input"> В 1966г. <br />
+                <input type="radio" name="firstApproch" value="1972" class="form-check-input"> В 1972г. <br />
+            </p>
+            <div style="margin-top: 10px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock" style="height: 360px">
+            <p class="task">
+                5. Закон Хаббла гласит: <br />
+                <input type="radio" name="hubbleLaw" value="1" class="form-check-input"> Чем дальше галактики отстоят
+                друг
+                от друга, тем с большей скоростью они притягиваются друг к другу. <br /> <br />
+                <input type="radio" name="hubbleLaw" value="2" class="form-check-input"> Чем дальше галактики отстоят
+                друг
+                от друга, тем с большей скоростью они удаляются друг от друга. <br /> <br />
+                <input type="radio" name="hubbleLaw" value="3" class="form-check-input"> Галактики неуклонно сближаются
+                друг с другом независимо от того, на каком расстоянии они друг от друга находятся. <br /> <br />
+            </p>
+            <div style="margin-top: -12px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                6. Кто разработал новый метод определения орбиты небесного тела по трем наблюдениям: <br />
+                <input type="radio" name="creator" value="gauss" class="form-check-input"> Гаусс <br />
+                <input type="radio" name="creator" value="garding" class="form-check-input"> Гардинг <br />
+                <input type="radio" name="creator" value="olbers" class="form-check-input"> Ольберс <br />
+            </p>
+            <div style="margin-top: 19px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                7. Какая из планет Солнечной системы имеет самую большую скорость вращения вокруг Солнца <br />
+                <input type="radio" name="theFastest" value="mercury" class="form-check-input"> Меркурий <br />
+                <input type="radio" name="theFastest" value="venus" class="form-check-input"> Венера <br />
+                <input type="radio" name="theFastest" value="uran" class="form-check-input"> Уран <br />
+            </p>
+            <div style="margin-top: 19px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                8. Какая из звезд Северного небосвода практически неподвижна в отличие от других, совершающих свое
+                движение вокруг него: <br />
+                <input type="radio" name="unmovable" value="sirius" class="form-check-input"> Сириус <br />
+                <input type="radio" name="unmovable" value="polarna" class="form-check-input"> Полярная звезда <br />
+                <input type="radio" name="unmovable" value="altair" class="form-check-input"> Альтаир <br />
+            </p>
+            <div style="margin-top: 19px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                9. Когда впервые человек полетел в космос? <br />
+                <input type="radio" name="firstMan" value="1956" class="form-check-input"> В 1956г. <br />
+                <input type="radio" name="firstMan" value="1961" class="form-check-input"> В 1961г. <br />
+                <input type="radio" name="firstMan" value="1972" class="form-check-input"> В 1972г. <br />
+            </p>
+            <div style="margin-top: 50px; margin-left: 10px;" class="icon"></div>
+        </div>
+        <div class="testBlock">
+            <p class="task">
+                10. Когда был осуществлен запуск "Вояджер-1"? <br />
+                <input type="radio" name="voyager_1" value="1971" class="form-check-input"> В 1971г.<br />
+                <input type="radio" name="voyager_1" value="1975" class="form-check-input"> В 1975г.<br />
+                <input type="radio" name="voyager_1" value="1977" class="form-check-input"> В 1977г.<br />
+            </p>
+            <div style="margin-top: 50px; margin-left: 10px" class="icon"></div>
+        </div>
+    </div>
+</body>
+
+</html>
